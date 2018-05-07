@@ -1,0 +1,8 @@
+"zh-CN":
+  active_admin:
+    blank_slate:
+      link: ""
+    empty: "空"
+  time:
+    formats:
+      long: "%Y-%m-%d %H:%M:%S"

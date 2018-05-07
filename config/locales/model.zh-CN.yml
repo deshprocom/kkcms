@@ -1,0 +1,18 @@
+"zh-CN":
+  activerecord:
+    models:
+      admin_user: "管理员"
+    attributes:
+      admin_user:
+        email: "邮箱"
+        sign_in_count: "登陆次数"
+        current_sign_in_at: "当前登录"
+        last_sign_in_at: "上次登录时间"
+        last_sign_in_ip: "上次登录地点"
+        created_at: "注册时间"
+        password: "密码"
+        password_confirmation: "确认密码"
+      format: "%{attribute}%{message}"
+      messages:
+        blank: '不能为空'
+
