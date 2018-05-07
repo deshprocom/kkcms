@@ -15,7 +15,8 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: <%= ENV['KK_DATABASE_PASSWORD'] || '123456' %>
-  socket: /tmp/mysql.sock
+  socket:  <%= ENV['KK_DATABASE_SOCKET'] || '/tmp/mysql.sock' %>
+
 
 development:
   <<: *default
@@ -51,4 +52,4 @@ production:
   <<: *default
   database: kkcms_production
   username: kkcms
-  password: <%= ENV['KKCMS_DATABASE_PASSWORD'] %>
+  password: <%= ENV['KK_DATABASE_PASSWORD'] %>
