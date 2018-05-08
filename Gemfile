@@ -29,6 +29,11 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'dotenv-rails'
 
+# cache 相关
+gem 'redis-rails', '~> 5.0', '>= 5.0.2'
+gem 'second_level_cache', '~> 2.3.0'
+gem 'resque', github: 'resque/resque'
+
 # view 相关
 gem 'haml'
 gem 'sass-rails', '~> 5.0'
