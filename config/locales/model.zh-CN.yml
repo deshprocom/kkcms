@@ -2,6 +2,7 @@
   activerecord:
     models:
       admin_user: "管理员"
+      hotel: "酒店"
     attributes:
       admin_user:
         email: "邮箱"

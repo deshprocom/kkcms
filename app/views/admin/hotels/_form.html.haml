@@ -1,0 +1,10 @@
+= semantic_form_for [:admin, @hotel] do |f|
+  = f.semantic_errors *f.object.errors.keys
+  = f.inputs do
+    = f.input :title
+    = f.input :location
+    = f.input :logo, as: :attachment, required: true,
+                     hint: '图片最大为 2MB',
+                     image: proc { |o| o.preview_logo }
+  = f.actions
+
