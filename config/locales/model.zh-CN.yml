@@ -13,6 +13,11 @@
         created_at: "注册时间"
         password: "密码"
         password_confirmation: "确认密码"
+      hotel:
+        title: "酒店标题"
+        location: "地点"
+        logo: "酒店图标"
+        description: "酒店描述"
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'
