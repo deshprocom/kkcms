@@ -18,6 +18,8 @@
         location: "地点"
         logo: "酒店图标"
         description: "酒店描述"
+        published: "是否发布"
+        telephone: "联系电话"
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'

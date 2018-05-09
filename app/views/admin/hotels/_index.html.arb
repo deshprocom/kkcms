@@ -3,6 +3,7 @@ context.instance_eval do
   column(:logo, sortable: false) { |hotel| img_link_to_show(hotel) }
   column(:title, sortable: false)
   column(:location, sortable: false)
+  column(:published, sortable: false) { |hotel| hotel_publish_link(hotel) }
   actions
 end
 

@@ -3,10 +3,12 @@
   = f.inputs do
     = f.input :title
     = f.input :location
+    = f.input :telephone
     = f.input :logo, as: :attachment, required: true,
                      hint: '图片最大为 2MB',
                      image: proc { |o| o.preview_logo }
 
+    = f.input :published
     ~ f.text_area :description
   = f.actions
 

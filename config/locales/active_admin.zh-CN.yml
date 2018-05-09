@@ -6,3 +6,11 @@
   time:
     formats:
       long: "%Y-%m-%d %H:%M:%S"
+
+  publish: "发布"
+  unpublish: "取消发布"
+  publish_notice: "发布成功"
+  unpublish_notice: "取消发布成功"
+
+  hotel:
+    destroy_error: '已发布的酒店，不允许删除'
