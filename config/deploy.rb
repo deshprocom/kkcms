@@ -6,6 +6,8 @@ set :repo_url, "git@github.com:deshprocom/kkcms.git"
 
 set :deploy_to, '/home/deploy/deploy/kkcms'
 set :rvm_ruby_version, 'ruby-2.5.0'
+# 可使用 gem 'capistrano/nvm' 代替 设置node的env
+set :default_env, { path: '$PATH:/home/deploy/.nvm/v8.5.0/bin' }
 
 append :linked_files, '.env'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'

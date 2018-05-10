@@ -27,3 +27,6 @@
 /coverage
 /bfg.jar
 .vscode
+
+
+public/assets/*
