@@ -18,3 +18,16 @@
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+
+
+
+.ui-dialog {
+  .ui-dialog-titlebar {
+    height: 30px;
+    line-height: 30px;
+
+    button { float: right; }
+
+    span.ui-button-icon { font-size: 1em; }
+  }
+}

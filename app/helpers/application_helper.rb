@@ -10,4 +10,13 @@ module ApplicationHelper
       link_to I18n.t('publish'), publish_admin_hotel_path(hotel), method: :post
     end
   end
+
+  def hotel_sidebar_generator(context)
+    context.instance_eval do
+      ul do
+        li link_to '酒店详情', admin_hotel_path(hotel)
+        li link_to '图片管理', admin_hotel_images_path(hotel)
+      end
+    end
+  end
 end

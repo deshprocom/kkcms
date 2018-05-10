@@ -40,6 +40,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'simditor'
+gem 'remotipart'
 
 # activeadmin 相关
 gem 'activeadmin', '~> 1.3'

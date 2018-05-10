@@ -34,4 +34,8 @@ ActiveAdmin.register Hotel do
       redirect_back fallback_location: admin_hotels_url
     end
   end
+
+  sidebar '侧边栏', only: [:show, :edit] do
+    hotel_sidebar_generator(self)
+  end
 end
