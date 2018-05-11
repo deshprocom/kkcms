@@ -35,6 +35,9 @@
       info_type:
         name: "类型名称"
         published: "是否发布"
+        slug: 'url别名'
+        created_at: "创建时间"
+        updated_at: "修改时间"
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'
