@@ -8,6 +8,6 @@ context.instance_eval do
     row(:stickied)
     row(:created_at)
     row(:updated_at)
-    row(:description) { |info| sanitize info.description}
+    row(:description) { |info| sanitize info.description }
   end
 end
