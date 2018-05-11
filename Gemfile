@@ -45,6 +45,7 @@ gem 'remotipart'
 # activeadmin 相关
 gem 'activeadmin', '~> 1.3'
 gem 'devise'
+gem 'rails-i18n'
 
 # 文件上传处理 相关
 gem 'carrierwave', '~> 1.2', '>= 1.2.2'
