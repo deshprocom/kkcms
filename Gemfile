@@ -45,6 +45,7 @@ gem 'remotipart'
 # activeadmin 相关
 gem 'activeadmin', '~> 1.3'
 gem 'devise'
+gem 'rails-i18n'
 
 # 文件上传处理 相关
 gem 'carrierwave', '~> 1.2', '>= 1.2.2'
@@ -57,6 +58,8 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+
+  gem 'rubocop', '~> 0.55.0', require: false
 end
 
 group :development do

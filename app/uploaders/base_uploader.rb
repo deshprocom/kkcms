@@ -8,19 +8,18 @@ class BaseUploader < CarrierWave::Uploader::Base
   end
 
   def extension_whitelist
-    %w(jpg jpeg gif png)
+    %w[jpg jpeg gif png]
   end
 
-  # rubocop:disable Style/GuardClause
   def crop
-    if model.crop_x.present?
-      manipulate! do |img|
-        x = model.crop_x.to_i
-        y = model.crop_y.to_i
-        w = model.crop_w.to_i
-        h = model.crop_h.to_i
-        img.crop([[w, h].join('x'), [x, y].join('+')].join('+'))
-      end
+    return if model.crop_x.blank?
+
+    manipulate! do |img|
+      x = model.crop_x.to_i
+      y = model.crop_y.to_i
+      w = model.crop_w.to_i
+      h = model.crop_h.to_i
+      img.crop([[w, h].join('x'), [x, y].join('+')].join('+'))
     end
   end
 
@@ -41,7 +40,7 @@ class BaseUploader < CarrierWave::Uploader::Base
   # md - 500
   # lg - 1080
 
-  ALLOW_CDN_VERSIONS = %w(xs sm md lg).freeze
+  ALLOW_CDN_VERSIONS = %w[xs sm md lg].freeze
   def url(version_name = nil)
     return super unless version_name.to_s.in?(ALLOW_CDN_VERSIONS)
 

@@ -1,0 +1,13 @@
+context.instance_eval do
+  attributes_table do
+    row(:info_type)
+    row(:logo) { |info| image_tag(info.preview_image, height: 150) }
+    row(:title)
+    row(:date)
+    row(:published)
+    row(:stickied)
+    row(:created_at)
+    row(:updated_at)
+    row(:description) { |info| sanitize info.description }
+  end
+end

@@ -3,6 +3,8 @@
     models:
       admin_user: "管理员"
       hotel: "酒店"
+      info: "资讯"
+      info_type: "资讯类型"
     attributes:
       admin_user:
         email: "邮箱"
@@ -20,6 +22,22 @@
         description: "酒店描述"
         published: "是否发布"
         telephone: "联系电话"
+      info:
+        title: "标题"
+        info_type: "类型"
+        date: "日期"
+        image: "图片"
+        description: "描述"
+        published: "是否发布"
+        stickied: "是否置顶"
+        created_at: "创建时间"
+        updated_at: "修改时间"
+      info_type:
+        name: "类型名称"
+        published: "是否发布"
+        slug: 'url别名'
+        created_at: "创建时间"
+        updated_at: "修改时间"
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'

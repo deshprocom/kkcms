@@ -5,6 +5,6 @@ context.instance_eval do
     row(:location)
     row(:telephone)
     row(:published)
-    row(:description) { |hotel| sanitize hotel.description}
+    row(:description) { |hotel| sanitize hotel.description }
   end
 end

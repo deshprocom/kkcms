@@ -1,0 +1,17 @@
+= semantic_form_for [:admin, @info] do |f|
+  = f.semantic_errors *f.object.errors.keys
+  = f.inputs do
+    = f.input :info_type
+    = f.input :title
+    = f.input :date
+    = f.input :image, as: :attachment, required: true,
+                     hint: '图片最大为 2MB',
+                     image: proc { |o| o.preview_image }
+    = f.input :published
+    ~ f.text_area :description
+  = f.actions
+
+:javascript
+  $(function() {
+    dpEditor.call($('#info_description'), $('form.info'));
+  });
