@@ -16,3 +16,6 @@
     destroy_error: '已发布的酒店，不允许删除'
   info:
     destroy_error: '已发布的资讯，不允许删除'
+  exchange_rate:
+    real_time: '实时汇率'
+    local: '本地汇率'
