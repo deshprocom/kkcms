@@ -56,3 +56,6 @@ Metrics/BlockLength:
 
 Style/SymbolArray:
   Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
