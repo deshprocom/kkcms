@@ -41,7 +41,9 @@
         updated_at: "修改时间"
       exchange_rate:
         s_currency: '当前币种'
+        s_currency_no: '当前币种编号'
         t_currency: '目标币种'
+        t_currency_no: '目标币种编号'
         rate_type: '汇率类型'
         rate: '汇率'
       format: "%{attribute}%{message}"
