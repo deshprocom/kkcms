@@ -59,3 +59,6 @@ Style/SymbolArray:
 
 Style/IfUnlessModifier:
   Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
