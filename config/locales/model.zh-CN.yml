@@ -6,6 +6,7 @@
       info: "资讯"
       info_type: "资讯类型"
       exchange_rate: "汇率"
+      banner: "首页banner"
     attributes:
       admin_user:
         email: "邮箱"
@@ -46,6 +47,10 @@
         t_currency_no: '目标币种编号'
         rate_type: '汇率类型'
         rate: '汇率'
+      banner:
+        source_title: '来源标题'
+        source_type: '来源类型'
+        image: '图片'
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'
