@@ -19,3 +19,6 @@
   exchange_rate:
     real_time: '实时汇率'
     local: '本地汇率'
+  banner:
+    info: '资讯'
+    hotel: '酒店'
