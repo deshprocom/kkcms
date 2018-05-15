@@ -29,7 +29,7 @@ $ ->
         pasteImage: true,
         allowedStyles: { span: ['color'] },# 去掉font-size的支持
         upload: {
-          url: '/photos',
+          url: '/admin_images',
           fileKey: 'image',
           leaveConfirm: '正在上传文件，如果离开上传会自动取消'
         }
