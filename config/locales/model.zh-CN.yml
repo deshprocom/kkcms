@@ -7,6 +7,7 @@
       info_type: "资讯类型"
       exchange_rate: "汇率"
       banner: "首页banner"
+      recommend: "热门推荐"
     attributes:
       admin_user:
         email: "邮箱"
@@ -51,6 +52,10 @@
         source_title: '来源标题'
         source_type: '来源类型'
         image: '图片'
+      recommend:
+        source_title: '来源标题'
+        source_type: '来源类型'
+        source_image: '来源图片'
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'
