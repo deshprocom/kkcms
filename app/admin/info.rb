@@ -20,6 +20,13 @@ ActiveAdmin.register Info do
 
   controller do
     before_action :unpublished?, only: [:destroy]
+    before_action :process_doc, only: [:create, :update]
+
+    def process_doc
+      return if params[:doc].blank?
+
+      params[:info][:description] = DocProcessor.to_html(params[:doc].path)
+    end
 
     def unpublished?
       return unless resource.published?

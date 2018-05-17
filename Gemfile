@@ -51,6 +51,7 @@ gem 'rails-i18n'
 gem 'carrierwave', '~> 1.2', '>= 1.2.2'
 gem 'carrierwave-upyun', '~> 0.2.2'
 gem 'mini_magick', '~> 4.8'
+gem 'pandoc-ruby'
 
 gem 'action-store'
 group :development, :test do
