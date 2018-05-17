@@ -15,6 +15,12 @@ $ ->
         if $('.simditor-body img.uploading').length > 0
           alert('文章中的图片未上传成功，请等待上传成功后，再次提交')
           return false
+
+        images = $('.simditor-body img')
+        for image in images
+          if image.src.substring(0,5) == 'data:'
+            alert('文章中的图片未上传成功，请点击图片重新上传，再次提交')
+            return false
       )
 
     new: (textarea, options) ->
