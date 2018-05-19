@@ -53,6 +53,9 @@ gem 'carrierwave-upyun', '~> 0.2.2'
 gem 'mini_magick', '~> 4.8'
 gem 'pandoc-ruby'
 
+gem 'geocoder'
+gem 'best_in_place'
+
 gem 'action-store'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

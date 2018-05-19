@@ -37,4 +37,9 @@ module ApplicationHelper
       link_to I18n.t('sticky'), sticky_admin_info_path(info), method: :post
     end
   end
+
+  def avatar(src, options = {})
+    html_options = { class: 'img-circle', size: 60 }.merge(options)
+    image_tag(src, html_options) if src.present?
+  end
 end

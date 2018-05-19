@@ -8,6 +8,7 @@
       exchange_rate: "汇率"
       banner: "首页banner"
       recommend: "热门推荐"
+      user: '用户'
     attributes:
       admin_user:
         email: "邮箱"
@@ -58,7 +59,20 @@
         source_title: '来源标题'
         source_type: '来源类型'
         source_image: '来源图片'
+      user:
+        user_name: '用户名'
+        nick_name: '昵称'
+        avatar: '头像'
+        mobile: '手机号'
+        email: '邮箱'
+        signature: '签名'
+        last_visit: '上次登录时间'
+        reg_date: '注册日期'
+        mark: '备注'
+        followers_count: '粉丝'
+        following_count: '关注'
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'
+
 
