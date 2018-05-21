@@ -13,11 +13,11 @@ ActiveAdmin.register WeixinUser do
   index do
     id_column
     column :open_id
-    column '微信头像', :image do |wx_user|
+    column :head_img do |wx_user|
       avatar(wx_user.head_img, size: 80)
     end
     column :nick_name
-    column :user_id do |wx_user|
+    column :user do |wx_user|
       if wx_user.try(:user).present?
         link_to wx_user.user.nick_name, admin_user_url(wx_user.user), target: '_blank'
       end
