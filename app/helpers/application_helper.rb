@@ -42,4 +42,20 @@ module ApplicationHelper
     html_options = { class: 'img-circle', size: 60 }.merge(options)
     image_tag(src, html_options) if src.present?
   end
+
+  def editable_text_column(resource, attr)
+    val = resource.send(attr)
+    val = '' if val.blank?
+    out = []
+    out << content_tag(:div, val, id: "editable_text_column_#{attr}_#{resource.id}",
+                       class: 'editable_text_column',
+                       ondblclick: 'quickEditable.editable_text_column_do(this)')
+    out << content_tag(:input, nil, class: 'editable_text_column admin-editable',
+                       id: "editable_text_column_#{attr}_#{resource.id}",
+                       style: 'display:none;',
+                       data: { path: resource_path(resource),
+                               'resource-class': resource.class.name.downcase,
+                               attr: attr })
+    safe_join(out)
+  end
 end

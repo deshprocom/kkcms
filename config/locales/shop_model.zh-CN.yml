@@ -1,0 +1,9 @@
+"zh-CN":
+  activerecord:
+    models:
+      category: '种类'
+      shop/category: '种类'
+    attributes:
+      shop/category:
+        name: "分类名称"
+        image: "分类图片"

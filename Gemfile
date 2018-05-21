@@ -41,6 +41,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'simditor'
 gem 'remotipart'
+gem 'fancybox2-rails'
 
 # activeadmin 相关
 gem 'activeadmin', '~> 1.3'
@@ -55,6 +56,7 @@ gem 'pandoc-ruby'
 
 gem 'geocoder'
 gem 'best_in_place'
+gem 'awesome_nested_set' # 多级类别
 
 gem 'action-store'
 group :development, :test do
