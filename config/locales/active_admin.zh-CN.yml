@@ -11,6 +11,8 @@
   unsticky: "取消置顶"
   sticky_notice: "置顶成功"
   unsticky_notice: "取消置顶成功"
+  excellent: '精华'
+  unexcellent: '取消精华'
 
   hotel:
     destroy_error: '已发布的酒店，不允许删除'
@@ -22,6 +24,13 @@
   banner:
     info: '资讯'
     hotel: '酒店'
+  body_type:
+    long: '长帖'
+    short: '说说'
+  status:
+    pending: '审核中'
+    passed: '审核通过'
+    failed: '审核失败'
   time:
     formats:
       long: "%Y-%m-%d %H:%M:%S"
