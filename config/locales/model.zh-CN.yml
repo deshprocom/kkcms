@@ -9,6 +9,7 @@
       banner: "首页banner"
       recommend: "热门推荐"
       user: '用户'
+      weixin_user: '微信用户'
     attributes:
       admin_user:
         email: "邮箱"
@@ -71,6 +72,17 @@
         mark: '备注'
         followers_count: '粉丝'
         following_count: '关注'
+      weixin_user:
+        open_id: '微信ID'
+        head_img: '微信头像'
+        nick_name: '昵称'
+        user: '用户'
+        sex: '性别'
+        province: '省份'
+        city: '城市'
+        created_at: '创建时间'
+        updated_at: '修改时间'
+
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'
