@@ -42,4 +42,12 @@ module ApplicationHelper
     html_options = { class: 'img-circle', size: 60 }.merge(options)
     image_tag(src, html_options) if src.present?
   end
+
+  def topic_excellent_link(topic)
+    if topic.excellent?
+      link_to I18n.t('unexcellent'), unexcellent_admin_topic_path(topic), method: :post
+    else
+      link_to I18n.t('excellent'), excellent_admin_topic_path(topic), method: :post
+    end
+  end
 end
