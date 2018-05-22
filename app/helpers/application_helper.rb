@@ -47,10 +47,12 @@ module ApplicationHelper
     val = resource.send(attr)
     val = '' if val.blank?
     out = []
-    out << content_tag(:div, val, id: "editable_text_column_#{attr}_#{resource.id}",
+    out << content_tag(:div, val,
+                       id: "editable_text_column_#{attr}_#{resource.id}",
                        class: 'editable_text_column',
                        ondblclick: 'quickEditable.editable_text_column_do(this)')
-    out << content_tag(:input, nil, class: 'editable_text_column admin-editable',
+    out << content_tag(:input, nil,
+                       class: 'editable_text_column admin-editable',
                        id: "editable_text_column_#{attr}_#{resource.id}",
                        style: 'display:none;',
                        data: { path: resource_path(resource),

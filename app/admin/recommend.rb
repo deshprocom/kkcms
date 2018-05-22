@@ -24,9 +24,7 @@ ActiveAdmin.register Recommend do
     end
 
     def recommend_params
-      params.require(:recommend).permit(:image,
-                                     :source_id,
-                                     :source_type)
+      params.require(:recommend).permit(:image, :source_id, :source_type)
     end
   end
 
