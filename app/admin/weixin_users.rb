@@ -23,7 +23,7 @@ ActiveAdmin.register WeixinUser do
       end
     end
     column :sex do |wx_user|
-      wx_user.sex.eql?(1) ? '男' : '女'
+      wx_user.sex.to_i.eql?(1) ? '男' : '女'
     end
     column :province
     column :city

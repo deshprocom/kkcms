@@ -60,4 +60,12 @@ module ApplicationHelper
                                attr: attr })
     safe_join(out)
   end
+
+  def topic_excellent_link(topic)
+    if topic.excellent?
+      link_to I18n.t('unexcellent'), unexcellent_admin_topic_path(topic), method: :post
+    else
+      link_to I18n.t('excellent'), excellent_admin_topic_path(topic), method: :post
+    end
+  end
 end
