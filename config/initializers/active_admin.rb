@@ -1,4 +1,27 @@
 ActiveAdmin.setup do |config|
+  config.load_paths += [File.join(Rails.root, 'app', 'shop')]
+
+  config.namespace :admin do |admin|
+    admin.build_menu :utility_navigation do |menu|
+      menu.add label: '前往商城管理',
+               url: Rails.application.routes.url_helpers.shop_categories_path,
+               html_options: { target: :blank }
+      admin.add_logout_button_to_menu menu
+      admin.add_current_user_to_menu  menu
+    end
+  end
+
+  config.namespace :shop do |shop|
+    shop.build_menu :utility_navigation do |menu|
+      shop.add_logout_button_to_menu menu
+      shop.add_current_user_to_menu  menu
+
+      menu.add label: '前往app管理',
+               url: Rails.application.routes.url_helpers.admin_root_path,
+               html_options: { target: :blank }
+    end
+  end
+
   # == Site Title
   #
   # Set the title that is displayed on the main layout

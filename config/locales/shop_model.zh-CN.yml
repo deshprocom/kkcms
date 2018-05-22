@@ -1,0 +1,35 @@
+"zh-CN":
+  activerecord:
+    models:
+      category: '种类'
+      shop/category: '种类'
+      product: '商品'
+      shop/product: '商品'
+    attributes:
+      shop/category:
+        name: "分类名称"
+        image: "分类图片"
+      shop/product:
+        title: "商品标题"
+        icon: "商品图标"
+        type: "商品类型"
+        freight: "运费模板"
+        freight_free: "是否免运费"
+        product_type: "商品类型"
+        published: "是否上架"
+        returnable: "是否支持退货"
+        recommended: "是否推荐"
+        description: "商品描述"
+      shop/variant:
+        original_price: "商品价格"
+        price: "实付价格"
+        stock: "库存"
+        weight: "商品重量"
+        volume: "商品体积"
+        origin_point: "发货地点"
+      shop/option_type:
+        name: "名称"
+        product: "商品名"
+      shop/option_value:
+        name: "名称"
+        option_type: "规格名"

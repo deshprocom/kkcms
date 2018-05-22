@@ -24,24 +24,8 @@ ActiveAdmin.register Recommend do
     end
 
     def recommend_params
-      params.require(:recommend).permit(:image,
-                                     :source_id,
-                                     :source_type)
+      params.require(:recommend).permit(:image, :source_id, :source_type)
     end
-  end
-
-  member_action :reposition, method: :post do
-    recommend = Recommend.find(params[:id])
-    next_recommend = params[:next_id] && Recommend.find(params[:next_id].split('_').last)
-    prev_recommend = params[:prev_id] && Recommend.find(params[:prev_id].split('_').last)
-    position = if params[:prev_id].blank?
-                 next_recommend.position / 2
-               elsif params[:next_id].blank?
-                 prev_recommend.position + 100000
-               else
-                 (prev_recommend.position + next_recommend.position) / 2
-               end
-    recommend.update(position: position)
   end
 
   member_action :reposition, method: :post do

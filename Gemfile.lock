@@ -71,6 +71,8 @@ GEM
       activesupport (>= 3.0.0)
     arel (8.0.0)
     ast (2.4.0)
+    awesome_nested_set (3.1.4)
+      activerecord (>= 4.0.0, < 5.3)
     bcrypt (3.1.11)
     best_in_place (3.1.1)
       actionpack (>= 3.2)
@@ -135,6 +137,8 @@ GEM
       railties (>= 3.2, < 6.0)
     erubi (1.7.1)
     execjs (2.7.0)
+    fancybox2-rails (0.2.7)
+      railties (>= 3.1.0)
     faraday (0.15.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.23)
@@ -357,6 +361,7 @@ PLATFORMS
 DEPENDENCIES
   action-store
   activeadmin (~> 1.3)
+  awesome_nested_set
   best_in_place
   byebug
   capistrano
@@ -370,6 +375,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   dotenv-rails
+  fancybox2-rails
   geocoder
   haml
   listen (>= 3.0.5, < 3.2)
