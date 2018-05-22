@@ -16,7 +16,7 @@ ActiveAdmin.register Shop::Image, as: 'Image', namespace: :shop do
     product_sidebar_generator(self)
   end
 
-  permit_params :crop_x, :crop_y, :crop_w, :crop_h, :filename
+  permit_params :crop_x, :crop_y, :crop_w, :crop_h, :image
 
   index title: '图片管理', download_links: false do
     render 'shop/products/images/index', context: self
@@ -36,7 +36,7 @@ ActiveAdmin.register Shop::Image, as: 'Image', namespace: :shop do
     def create
       last_img = @product.images.position_asc.last
       position = last_img&.position.to_i + 100000
-      @image = @product.images.build(permitted_params[:product_image].merge(position: position))
+      @image = @product.images.build(permitted_params[:shop_image].merge(position: position))
       flash[:notice] = '新建成功' if @image.save
       render 'shop/products/images/response'
     end
@@ -46,7 +46,7 @@ ActiveAdmin.register Shop::Image, as: 'Image', namespace: :shop do
     end
 
     def update
-      @image.assign_attributes(permitted_params[:product_image])
+      @image.assign_attributes(permitted_params[:shop_image])
       flash[:notice] = '更新成功' if @image.save
       render 'shop/products/images/response'
     end
