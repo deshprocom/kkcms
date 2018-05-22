@@ -16,3 +16,4 @@ $ ->
         this_select.find("option").removeAttr("selected")
         this_select.find("option[value='#{before_val}']").attr("selected", true);
   );
+

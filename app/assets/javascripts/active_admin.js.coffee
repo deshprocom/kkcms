@@ -2,6 +2,7 @@
 #= require simditor
 #= require jquery.remotipart
 #= require best_in_place
+#= require jquery.colorbox-min
 #= require_tree ./admin
 
 $(document).ready ->

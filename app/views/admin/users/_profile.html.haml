@@ -1,0 +1,40 @@
+%div.profile_container
+  %div.header
+    %div.user_info
+      %div.left
+        %span= avatar(resource.avatar_path, size: 70)
+      %div.right
+        %div
+          %span 昵称：
+          %span= resource.nick_name
+        %div
+          %span ID:
+          %span= resource.user_name
+        %div
+          %span 备注:
+          %span= resource.mark
+    %div.account
+      %div
+        %span 于#{resource.reg_date&.strftime('%Y-%m-%d')}注册
+      %div
+        %span 禁言
+        %span 停封账户
+  %div.middle
+    %div.actions
+      %span
+        %span 关注
+        %span= resource.following_count
+      %span
+        %span 粉丝
+        %span= resource.followers_count
+  %div.bottom
+    %div.dynamics
+      %span
+        %span 话题
+        %span= resource.topics.count
+      %span
+        %span 评论
+        %span= resource.comments.count
+      %span
+        %span 回复
+        %span= resource.comments.count

@@ -21,4 +21,6 @@ ActiveAdmin.register User do
       li "用户总数：#{User.count}个"
     end
   end
+
+  member_action :profile, method: [:get] do; end
 end

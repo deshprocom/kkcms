@@ -40,7 +40,7 @@ module ApplicationHelper
 
   def avatar(src, options = {})
     html_options = { class: 'img-circle', size: 60 }.merge(options)
-    image_tag(src, html_options) if src.present?
+    src.present? ? image_tag(src, html_options) : ''
   end
 
   def topic_excellent_link(topic)

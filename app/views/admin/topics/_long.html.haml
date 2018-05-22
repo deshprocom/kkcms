@@ -10,4 +10,4 @@
   %div
     %div= resource.title
   %div
-    %div= sanitize(resource.body)
+    %div= sanitize(body_filter_nbsp resource.body)

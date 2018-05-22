@@ -1,14 +1,10 @@
 context.instance_eval do
   column :id
   column :user do |topic|
-    # link_to admin_admin_user_path(topic.user) do
-    avatar(topic.user.avatar_path)
-    # end
+    link_to avatar(topic.user.avatar_path, size: 70), profile_admin_user_path(topic.user), remote: true
   end
   column :cover_link, sortable: false do |topic|
-    # image_tag(topic.cover_link, height: 120)
-    link_to 'haha', '#', :data => { :colorbox => true }
-    # link_to image_tag(topic.cover_link, height: 120)
+    link_to image_tag(topic.cover_link, height: 120), full_image(topic.cover_link), class: "color-box"
   end
   column :title, sortable: false
   column :body, sortable: false do |topic|
