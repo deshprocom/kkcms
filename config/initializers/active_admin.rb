@@ -3,8 +3,8 @@ ActiveAdmin.setup do |config|
 
   config.namespace :admin do |admin|
     admin.build_menu :utility_navigation do |menu|
-      menu.add label: '前往商品管理',
-               url: Rails.application.routes.url_helpers.shop_root_path,
+      menu.add label: '前往商城管理',
+               url: Rails.application.routes.url_helpers.shop_categories_path,
                html_options: { target: :blank }
       admin.add_logout_button_to_menu menu
       admin.add_current_user_to_menu  menu
