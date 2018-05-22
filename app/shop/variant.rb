@@ -13,7 +13,7 @@ module Shop
     end
 
     permit_params :price, :original_price, :stock,
-                  image_attributes: [:crop_x, :crop_y, :crop_w, :crop_h, :filename]
+                  image_attributes: [:crop_x, :crop_y, :crop_w, :crop_h, :image]
 
     controller do
       before_action :set_product, only: [:index, :quick_edit]
@@ -25,7 +25,7 @@ module Shop
       end
 
       def update
-        @variant.update(permitted_params[:variant])
+        @variant.update(permitted_params[:shop_variant])
       end
 
       def set_product
@@ -46,7 +46,7 @@ module Shop
     end
 
     member_action :quick_update, method: :patch do
-      @variant.update(permitted_params[:variant])
+      @variant.update(permitted_params[:shop_variant])
       @variant.product.recount_all_stock
       render 'quick_response', layout: false
     end
