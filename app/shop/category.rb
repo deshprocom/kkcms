@@ -1,6 +1,5 @@
-# rubocop:disable Metrics/BlockLength
 module Shop
-  ActiveAdmin.register Shop::Category, as: 'Category', namespace: :shop do
+  ActiveAdmin.register Category, as: 'Category', namespace: :shop do
     config.batch_actions = false
     config.filters = false
     config.breadcrumb = false
