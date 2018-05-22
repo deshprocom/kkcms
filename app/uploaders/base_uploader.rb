@@ -45,6 +45,8 @@ class BaseUploader < CarrierWave::Uploader::Base
     return super unless version_name.to_s.in?(ALLOW_CDN_VERSIONS)
 
     @url ||= super({})
+    return if @url.nil?
+
     [@url, version_name].join('!')
   end
 end

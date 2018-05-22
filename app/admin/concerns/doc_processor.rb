@@ -1,6 +1,6 @@
 module DocProcessor
   def self.to_html(doc_path)
-    html = PandocRuby.convert(IO::read(doc_path),
+    html = PandocRuby.convert(IO.read(doc_path),
                               from: :docx,
                               to: :html,
                               'extract-media': "./public/uploads/doc/#{SecureRandom.hex(4)}")
