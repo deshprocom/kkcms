@@ -12,6 +12,10 @@ ActiveAdmin.register Topic do
     render 'index', context: self
   end
 
+  show do
+    render 'show'
+  end
+
   member_action :excellent, method: :post do
     resource.excellent!
     redirect_back fallback_location: admin_topics_url, notice: I18n.t('publish_notice')
@@ -25,5 +29,10 @@ ActiveAdmin.register Topic do
   member_action :change_status, method: :put do
     resource.update(status: params[:status])
     render json: resource
+  end
+
+  member_action :likes, method: :get do
+    @page_title = "点赞列表 (#{resource.likes_count})"
+    @like_by_users = resource.like_by_users.page(params[:page]).per(10)
   end
 end

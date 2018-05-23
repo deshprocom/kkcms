@@ -1,0 +1,9 @@
+$('.profile_container').parents('.ui-dialog').remove();
+
+var html = "<%= j(render('profile', remote: true)) %>";
+$(html).dialog({
+    modal: true,
+    width: '45%',
+    title: '用户信息',
+    position: { my: 'top', at: 'top+250' }
+});
