@@ -43,6 +43,10 @@ module ApplicationHelper
     src.present? ? image_tag(src, html_options) : ''
   end
 
+  def avatar_profile(user, options = {})
+    link_to avatar(user.avatar_path, options), profile_admin_user_path(user), remote: true
+  end
+
   def editable_text_column(resource, attr)
     val = resource.send(attr)
     val = '' if val.blank?

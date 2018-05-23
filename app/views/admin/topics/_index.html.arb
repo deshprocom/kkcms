@@ -1,7 +1,7 @@
 context.instance_eval do
   column :id
   column :user do |topic|
-    link_to avatar(topic.user.avatar_path, size: 70), profile_admin_user_path(topic.user), remote: true
+    avatar_profile(topic.user, size: 70)
   end
   column :cover_link, sortable: false do |topic|
     link_to image_tag(topic.cover_link, height: 120), full_image(topic.cover_link), class: "color-box"

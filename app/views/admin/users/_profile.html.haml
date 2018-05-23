@@ -23,15 +23,15 @@
     %div.actions
       %span
         %span 关注
-        %span= resource.following_count
+        %span= link_to resource.following_count, followings_admin_user_path(resource)
       %span
         %span 粉丝
-        %span= resource.followers_count
+        %span= link_to resource.followers_count, followers_admin_user_path(resource)
   %div.bottom
     %div.dynamics
       %span
         %span 话题
-        %span= resource.topics.count
+        %span= link_to resource.topics.count, admin_topics_path(q: { user_id_eq: resource.id })
       %span
         %span 评论
         %span= resource.comments.count
