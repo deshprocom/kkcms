@@ -1,0 +1,15 @@
+%div
+  %table.index_table
+    %thead
+      %tr
+        %th 头像
+        %th 昵称
+        %th 点赞时间
+    %tbody
+      - @like_by_users.each do |user|
+        %tr
+          %td= avatar(user.avatar_path)
+          %td= user.nick_name
+          %td= resource.created_at.strftime("%F %T")
+  %div.index_foot
+    = paginate(@like_by_users, remote: true)
