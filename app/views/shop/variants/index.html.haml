@@ -31,7 +31,7 @@
                       %td=variant.id
                       - @product.option_types.each do |type|
                         %td=variant.find_option_value(type)&.name
-                      %td= image_tag(variant.image&.preview.to_s)
+                      %td= image_tag(variant.image&.preview.to_s, height: 150)
                       %td= editable_text_column variant, :original_price
                       %td= editable_text_column variant, :price
                       %td= editable_text_column variant, :stock

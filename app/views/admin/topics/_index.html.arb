@@ -4,7 +4,7 @@ context.instance_eval do
     avatar_profile(topic.user, size: 70)
   end
   column :cover_link, sortable: false do |topic|
-    link_to image_tag(topic.cover_link, height: 120), full_image(topic.cover_link), class: "color-box"
+    link_to image_tag(topic.cover_link, height: 120), full_image(topic.cover_link), class: 'color-box'
   end
   column :title, sortable: false
   column :body, sortable: false do |topic|
