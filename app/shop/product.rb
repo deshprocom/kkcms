@@ -46,6 +46,15 @@ module Shop
           render :edit
         end
       end
+
+      def destroy
+        if resource.order_items.exists?
+          flash[:notice] = '已有相关联的订单，不允许删除商品'
+        else
+          resource.destroy
+        end
+        redirect_to shop_products_url
+      end
     end
 
     member_action :publish, method: :post do

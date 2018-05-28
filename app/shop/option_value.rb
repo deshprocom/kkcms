@@ -23,9 +23,15 @@ module Shop
     end
 
     collection_action :destroy, method: :delete do
-      @option_value = OptionValue.find(params[:id])
-      @option_value.destroy
-      @option_value.option_type.product.rebuild_variants_for_value_change
+      @product = Product.find(params[:product_id])
+      if @product.order_items.exists?
+        flash[:error] = '已有相关联的订单，不允许改变该商品规格值'
+      else
+        @option_value = OptionValue.find(params[:id])
+        @option_value.destroy
+        @option_value.option_type.product.rebuild_variants_for_value_change
+      end
+
       redirect_back fallback_location: shop_product_variants_path(params[:product_id])
     end
   end
