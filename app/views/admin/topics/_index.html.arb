@@ -4,7 +4,7 @@ context.instance_eval do
     avatar_profile(topic.user, size: 70)
   end
   column :cover_link, sortable: false do |topic|
-    link_to image_tag(topic.cover_link, height: 120), full_image(topic.cover_link), class: "color-box"
+    link_to image_tag(topic.cover_link.to_s, height: 120), full_image(topic.cover_link.to_s), class: 'color-box'
   end
   column :title, sortable: false
   column :body, sortable: false do |topic|
@@ -19,10 +19,11 @@ context.instance_eval do
     link_to topic.likes_count, likes_admin_topic_path(topic)
   end
   column :total_comments, &:total_comments
+  column :reports_count
   column(:status) { |topic| select_to_status(topic) }
   column(:excellent) { |topic| topic_excellent_link topic }
   column :created_at
   actions name: '操作', defaults: false do |topic|
-    item '详情', admin_topic_path(topic), class: 'member_link'
+    item '详情', admin_topic_path(topic)
   end
 end

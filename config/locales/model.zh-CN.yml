@@ -11,6 +11,7 @@
       user: '用户'
       weixin_user: '微信用户'
       topic: '话题'
+      report: '举报'
     attributes:
       admin_user:
         email: "邮箱"
@@ -92,11 +93,18 @@
         total_views: '浏览量'
         likes_count: '点赞量'
         total_comments: '评论数'
+        reports_count: '举报数'
         status: '状态'
         excellent: '是否精选'
         cover_link: '封面'
         created_at: '创建时间'
         updated_at: '修改时间'
+      report:
+        user: '用户'
+        target_type: '举报类别'
+        body: '举报原因'
+        target: '举报对象'
+        created_at: '创建时间'
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'
