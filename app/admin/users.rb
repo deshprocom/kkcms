@@ -22,7 +22,7 @@ ActiveAdmin.register User do
     end
   end
 
-  member_action :profile, method: :get do; end
+  member_action :profile, method: :get
 
   member_action :followers, method: :get do
     @page_title = "粉丝列表(共计#{resource.followers_count})"

@@ -5,6 +5,7 @@
       shop/category: '种类'
       product: '商品'
       shop/product: '商品'
+      shop/order: '订单'
     attributes:
       shop/category:
         name: "分类名称"
