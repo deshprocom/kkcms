@@ -13,6 +13,7 @@
       topic: '话题'
       report: '举报'
       wx_bill: '微信账单'
+      express: '快递'
     attributes:
       admin_user:
         email: "邮箱"
@@ -106,6 +107,12 @@
         body: '举报原因'
         target: '举报对象'
         created_at: '创建时间'
+      express:
+        name: '快递名称'
+        code: '快递编码'
+      shipment:
+        express: '快递'
+        express_number: '快递单号'
       wx_bill:
         user: '用户'
         order_number: '订单号'

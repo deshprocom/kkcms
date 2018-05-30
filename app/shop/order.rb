@@ -19,12 +19,12 @@ module Shop
     filter :order_number
     filter :created_at
 
-    member_action :cancel_order, method: [:get, :post] do
+    member_action :cancel, method: [:get, :post] do
       return render :cancel unless request.post?
 
       reason = params[:cancel_reason]
       resource.cancel_order reason
-      redirect_back fallback_location: shop_product_orders_url
+      redirect_back fallback_location: shop_orders_url
     end
 
     member_action :shipping_detail, method: :get do
