@@ -41,7 +41,7 @@
     passed: '审核通过'
     failed: '审核失败'
   refund:
-    none: ''
+    none: '正常'
     open: '退款中'
     close: '退款失败'
     completed: '退款完成'

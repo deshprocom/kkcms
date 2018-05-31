@@ -34,3 +34,6 @@
       shop/option_value:
         name: "名称"
         option_type: "规格名"
+      shop/order:
+        user_email_or_user_mobile: '用户账户(手机或邮箱)'
+        order_number: '订单号'
