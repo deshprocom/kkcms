@@ -1,6 +1,7 @@
 ActiveAdmin.register WxBill, namespace: :shop do
   config.batch_actions = false
   config.clear_action_items!
+  menu priority: 3, parent: '订单管理'
 
   index do
     id_column

@@ -14,10 +14,8 @@ module Shop
     scope :returning
     scope :returned
 
-    filter :user_user_uuid, as: :string
     filter :user_email_or_user_mobile, as: :string
     filter :order_number
-    filter :created_at
 
     member_action :cancel, method: [:get, :post] do
       return render :cancel unless request.post?
