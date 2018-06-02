@@ -26,7 +26,7 @@
         original_price: "商品价格"
         price: "实付价格"
         stock: "库存"
-        weight: "商品重量"
+        weight: "商品重量(kg)"
         volume: "商品体积"
         origin_point: "发货地点"
       shop/option_type:
