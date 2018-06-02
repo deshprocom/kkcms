@@ -30,6 +30,10 @@
   exchange_rate:
     real_time: '实时汇率'
     local: '本地汇率'
+  shipping:
+    free_shipping: '免邮'
+    number: '按件数计费'
+    weight: '按重量计费'
   banner:
     info: '资讯'
     hotel: '酒店'

@@ -13,6 +13,7 @@ module Shop
     show do
       render 'show', context: self
     end
+    
   end
 end
 

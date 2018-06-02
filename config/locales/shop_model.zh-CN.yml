@@ -6,6 +6,7 @@
       product: '商品'
       shop/product: '商品'
       shop/order: '订单'
+      shipping: '邮费模板'
     attributes:
       shop/category:
         name: "分类名称"
@@ -37,3 +38,15 @@
       shop/order:
         user_email_or_user_mobile: '用户账户(手机或邮箱)'
         order_number: '订单号'
+      shop/shipping:
+        name: '名称'
+        express: '快递公司'
+        free_shipping: '是否免邮费'
+        calc_rule: '计费规则'
+      shop/shipping_method:
+        name: '名称'
+        first_item: '首项'
+        first_price: '首项价格'
+        add_item:  '续项'
+        add_price: '续项价格'
+        default_method: '默认计费方式'

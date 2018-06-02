@@ -1,7 +1,6 @@
 module Shop
   ActiveAdmin.register Order, as: 'Order', namespace: :shop do
     config.breadcrumb = false
-    PRODUCT_ORDER_STATUS = Shop::Order.statuses.keys
     menu priority: 3, parent: '订单管理', label: '订单列表'
     actions :all, except: [:new, :edit, :create, :destroy]
 
