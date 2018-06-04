@@ -12,7 +12,7 @@ module Shop
       product_sidebar_generator(self)
     end
 
-    permit_params :price, :original_price, :stock,
+    permit_params :price, :original_price, :stock, :weight, :volume,
                   image_attributes: [:crop_x, :crop_y, :crop_w, :crop_h, :image]
 
     controller do
