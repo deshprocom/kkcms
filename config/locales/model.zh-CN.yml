@@ -16,6 +16,7 @@
       express: '快递'
       j_user: '极光用户'
       integral_rule: '积分规则'
+      comment: '评论管理'
     attributes:
       admin_user:
         email: "邮箱"
@@ -130,6 +131,7 @@
         user_user_uuid: '用户ID'
         user_nick_name: '用户昵称'
         username: '昵称'
+        nick_name: '用户名'
         created_at: "创建时间"
       integral_rule:
         option_type_alias: '任务'
@@ -137,6 +139,18 @@
         limit_times: '限制次数'
         points: '增加积分'
         opened: '是否启用'
+      comment:
+        target_type: '话题'
+        body: '内容'
+        deleted_at: '删除时间'
+        deleted_reason: '删除原因'
+        created_at: '评论时间'
+        updated_at: '更新时间'
+        excellent: '精选'
+        user_nick_name: '用户昵称'
+        body_or_replies_body: '评论或回复内容'
+        user_nick_name_or_replies_user_nick_name: '用户昵称'
+        created_at_replies_created_at: '评论或回复时间'
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'
