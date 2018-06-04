@@ -72,4 +72,12 @@ module ApplicationHelper
       link_to I18n.t('excellent'), excellent_admin_topic_path(topic), method: :post
     end
   end
+
+  def comment_excellent_link(comment)
+    if comment.excellent?
+      link_to I18n.t('unexcellent'), unexcellent_admin_comment_path(comment), method: :post
+    else
+      link_to I18n.t('excellent'), excellent_admin_comment_path(comment), method: :post
+    end
+  end
 end
