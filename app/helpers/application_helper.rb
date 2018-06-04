@@ -60,7 +60,7 @@ module ApplicationHelper
                        id: "editable_text_column_#{attr}_#{resource.id}",
                        style: 'display:none;',
                        data: { path: resource_path(resource),
-                               'resource-class': resource.class.name.downcase,
+                               'resource-class': resource.class.name.downcase.gsub(/::/, '_'),
                                attr: attr })
     safe_join(out)
   end
