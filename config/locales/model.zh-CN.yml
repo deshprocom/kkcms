@@ -15,6 +15,7 @@
       wx_bill: '微信账单'
       express: '快递'
       j_user: '极光用户'
+      integral_rule: '积分规则'
     attributes:
       admin_user:
         email: "邮箱"
@@ -130,6 +131,12 @@
         user_nick_name: '用户昵称'
         username: '昵称'
         created_at: "创建时间"
+      integral_rule:
+        option_type_alias: '任务'
+        option_type: '任务英文名'
+        limit_times: '限制次数'
+        points: '增加积分'
+        opened: '是否启用'
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'
