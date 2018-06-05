@@ -17,6 +17,7 @@
       j_user: '极光用户'
       integral_rule: '积分规则'
       comment: '评论管理'
+      sms_log: '短信日志'
     attributes:
       admin_user:
         email: "邮箱"
@@ -151,6 +152,16 @@
         body_or_replies_body: '评论或回复内容'
         user_nick_name_or_replies_user_nick_name: '用户昵称'
         created_at_replies_created_at: '评论或回复时间'
+      sms_log:
+        mobile: '手机号'
+        content: '短信内容'
+        error_msg: '返回信息'
+        fee: '计费次数'
+        send_time: '发送时间'
+        arrival_time: '到达时间'
+        created_at: '创建时间'
+        updated_at: "修改时间"
+        status: '发送状态'
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'
