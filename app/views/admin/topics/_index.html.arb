@@ -8,7 +8,7 @@ context.instance_eval do
   end
   column :title, sortable: false
   column :body, sortable: false do |topic|
-    sanitize topic.body&.truncate(100)
+    sanitize topic.body&.truncate(60)
   end
   column :body_type, sortable: false do |topic|
     I18n.t("body_type.#{topic.body_type}")
