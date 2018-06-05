@@ -25,6 +25,12 @@
                     %th
                       库存
                       = editable_text_column @product.master, :stock
+                    %th
+                      重量(kg)
+                      = editable_text_column @product.master, :weight
+                    %th
+                      体积
+                      = editable_text_column @product.master, :volume
                 %tbody
                   - @product.variants.each do |variant|
                     %tr
@@ -35,6 +41,8 @@
                       %td= editable_text_column variant, :original_price
                       %td= editable_text_column variant, :price
                       %td= editable_text_column variant, :stock
+                      %td= editable_text_column variant, :weight
+                      %td= editable_text_column variant, :volume
                       %td
                         = link_to '编辑',
                                   quick_edit_shop_product_variant_path(@product, variant),

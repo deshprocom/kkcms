@@ -60,7 +60,7 @@ module ApplicationHelper
                        id: "editable_text_column_#{attr}_#{resource.id}",
                        style: 'display:none;',
                        data: { path: resource_path(resource),
-                               'resource-class': resource.class.name.downcase,
+                               'resource-class': resource.class.name.downcase.gsub(/::/, '_'),
                                attr: attr })
     safe_join(out)
   end
@@ -70,6 +70,14 @@ module ApplicationHelper
       link_to I18n.t('unexcellent'), unexcellent_admin_topic_path(topic), method: :post
     else
       link_to I18n.t('excellent'), excellent_admin_topic_path(topic), method: :post
+    end
+  end
+
+  def comment_excellent_link(comment)
+    if comment.excellent?
+      link_to I18n.t('unexcellent'), unexcellent_admin_comment_path(comment), method: :post
+    else
+      link_to I18n.t('excellent'), excellent_admin_comment_path(comment), method: :post
     end
   end
 end

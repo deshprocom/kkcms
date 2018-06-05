@@ -12,11 +12,11 @@
       = f.select 'category_id', children_conllection || [], prompt: '子分类'
       - @product.errors[:category].each do |err|
         %p.inline-errors=err
+    = f.input :shipping, include_blank: false
     = f.input :title
     = f.input :published
     = f.input :recommended
     = f.input :returnable
-    = f.input :description
     = f.semantic_fields_for :master do |form|
       = form.input :original_price
       = form.input :price
@@ -24,6 +24,7 @@
       = form.input :weight
       = form.input :volume
       = form.input :origin_point
+    = f.input :description
     = f.action :submit, button_html: { data: { disable_with: '请稍等...' } }
 
 :javascript
