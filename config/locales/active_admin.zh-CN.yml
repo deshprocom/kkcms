@@ -21,8 +21,8 @@
   unsticky: "取消置顶"
   sticky_notice: "置顶成功"
   unsticky_notice: "取消置顶成功"
-  excellent: '精华'
-  unexcellent: '取消精华'
+  excellent: '加入精选'
+  unexcellent: '取消精选'
   hotel:
     destroy_error: '已发布的酒店，不允许删除'
   info:
@@ -62,6 +62,10 @@
     refused: '已拒绝该申请'
     completed: '该申请已成功处理'
     cancel_return: '该申请用户已撤消'
+  comment_target:
+    topic: '说说|长帖'
+    info: '资讯'
+    hotel: '酒店'
   time:
     formats:
       long: "%Y-%m-%d %H:%M:%S"

@@ -40,11 +40,13 @@ module ApplicationHelper
 
   def avatar(src, options = {})
     html_options = { class: 'img-circle', size: 60 }.merge(options)
+    src = src.blank? ? 'default_avatar.jpg' : src
     src.present? ? image_tag(src, html_options) : ''
   end
 
   def avatar_profile(user, options = {})
-    link_to avatar(user.avatar_path, options), profile_admin_user_path(user), remote: true
+    avatar_path = user.avatar_path.blank? ? 'default_avatar.jpg' : user.avatar_path
+    link_to avatar(avatar_path, options), profile_admin_user_path(user), remote: true
   end
 
   def editable_text_column(resource, attr)
@@ -70,6 +72,14 @@ module ApplicationHelper
       link_to I18n.t('unexcellent'), unexcellent_admin_topic_path(topic), method: :post
     else
       link_to I18n.t('excellent'), excellent_admin_topic_path(topic), method: :post
+    end
+  end
+
+  def comment_excellent_link(comment)
+    if comment.excellent?
+      link_to I18n.t('unexcellent'), unexcellent_admin_comment_path(comment), method: :post
+    else
+      link_to I18n.t('excellent'), excellent_admin_comment_path(comment), method: :post
     end
   end
 end
