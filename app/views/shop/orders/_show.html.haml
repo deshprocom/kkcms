@@ -11,7 +11,7 @@
             %span= link_to '修改物流信息', edit_shop_order_shipment_path(resource, resource.shipment), remote: true
           - if resource.completed?
             -#%span= link_to '查看物流', shipping_detail_shop_product_order_path(resource), remote: true
-          - if resource.paid?
+          - if resource.unpaid?
             %span.cancel= link_to '取消', cancel_shop_order_path(resource), remote: true
     %div
       %span="物流信息: #{resource.shipment.express.name}( #{resource.shipment.express_number} )" if resource.shipment
@@ -24,6 +24,7 @@
         %table
           %tr
             %td 序号
+            %td id
             %td 商品名称
             %td 商品图片
             %td 类别
@@ -35,9 +36,10 @@
           - variant = item.variant
           - product = item.product
             %td= index + 1
+            %td= item.id
             %td
               %p= product.title
-              %p.text_sku= variant.text_sku_values.join(', ')
+              %p.text_sku= item.sku_value.join(', ')
             %td
               - img = variant&.image&.preview || product.preview_icon
               = link_to image_tag(img, height: 200), target: '_blank'
@@ -45,7 +47,7 @@
             %td= item.original_price
             %td= item.price
             %td= item.number
-        %span= "总价：¥#{resource.total_price}，实付：¥#{resource.final_price} (快递：¥#{resource.shipping_price})"
+        %span= "总价：¥#{resource.total_price}，实付：¥#{resource.final_price} (含快递：¥#{resource.shipping_price})"
     - user = resource.user
     %div.user_info
       %div

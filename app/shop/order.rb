@@ -17,7 +17,7 @@ module Shop
     filter :order_number
 
     member_action :cancel, method: [:get, :post] do
-      return render :cancel unless request.post?
+      return render :cancel if request.get?
 
       reason = params[:cancel_reason]
       resource.cancel_order reason
