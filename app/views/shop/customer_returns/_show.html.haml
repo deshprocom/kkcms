@@ -51,9 +51,10 @@
     %p
       退换状态：
       = I18n.t("customer_return.#{resource.return_status}")
-    %p="订单实付金额：#{order.final_price} (快递：#{order.shipping_price})"
+    %p="订单实付金额：#{order.final_price} (含快递：#{order.shipping_price})"
+    %p="已退款金额：#{order.refunded_price}"
     %p
-      ="退款金额：#{resource.refund_price}"
+      ="申请退款金额：#{resource.refund_price}"
       = link_to '修改金额'
     %p="退换货说明：#{resource.memo}"
     -#%p.refund_images

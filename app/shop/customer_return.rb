@@ -19,15 +19,15 @@ module Shop
 
       if params[:confirm_code] != 'confirm'
         flash[:error] = '输入确认码有误'
+        return redirect_to resource_url(resource)
+      end
+
+      result = AgreeCustomerReturnService.call(resource)
+      if result.failure?
+        flash[:error] = result.msg
       else
         flash[:notice] = '退换成功'
       end
-
-      # result = Services::ShopOrders::RefundService.call(@refund)
-      # if result.failure?
-      #   flash[:error] = result.msg
-      #   return redirect_back fallback_location: shop_product_refunds_url
-      # end
       redirect_to resource_url(resource)
     end
 
