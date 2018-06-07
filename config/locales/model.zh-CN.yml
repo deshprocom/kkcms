@@ -16,6 +16,7 @@
       express: '快递'
       j_user: '极光用户'
       integral_rule: '积分规则'
+      integral: '积分明细'
       comment: '评论管理'
       sms_log: '短信日志'
     attributes:
@@ -80,6 +81,7 @@
         mark: '备注'
         followers_count: '粉丝'
         following_count: '关注'
+        points: '积分'
       weixin_user:
         open_id: '微信ID'
         head_img: '微信头像'
@@ -162,6 +164,17 @@
         created_at: '创建时间'
         updated_at: "修改时间"
         status: '发送状态'
+      integral:
+        nick_name: '昵称'
+        avatar: '头像'
+        target_type: '目标类型'
+        target_id: '目标ID'
+        mark: '备注'
+        active_at: '领取时间'
+        created_at: '创建时间'
+        user_nick_name: '用户昵称'
+        option_type: '操作类型'
+        points: '积分'
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'

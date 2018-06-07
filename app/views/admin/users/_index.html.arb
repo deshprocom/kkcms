@@ -10,6 +10,9 @@ context.instance_eval do
   column(:signature, sortable: false)
   column(:last_visit)
   column(:reg_date)
+  column(:points) do |user|
+    link_to user.counter.points, admin_integrals_path(q: { user_id_eq: user.id })
+  end
   column(:mark, sortable: false) { |i| best_in_place i, :mark, as: :input, url: [:admin, i] }
   actions name: '操作'
 end
