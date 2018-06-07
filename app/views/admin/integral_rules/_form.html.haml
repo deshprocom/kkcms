@@ -5,6 +5,8 @@
     = f.input :limit_times
     = f.input :points
     = f.input :option_type
-    = f.input :icon
+    = f.input :icon, as: :attachment,
+                     hint: '图片最大为 2MB',
+                     image: proc { |o| o.icon_path }
     = f.input :opened
   = f.actions
