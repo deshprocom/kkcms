@@ -50,7 +50,7 @@ module Shop
 
     # 计算该订单已退款的的金额并标记相应的order_item 的已退款状态为true
     def calc_order_refunded_price!
-      @order.update(refunded_price:@order.refunded_price + @c_return.refund_price)
+      @order.update(refunded_price: @order.refunded_price + @c_return.refund_price)
       @c_return.return_items.each { |item| item.order_item.update(refunded: true) }
     end
 
