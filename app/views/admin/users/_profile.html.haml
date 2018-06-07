@@ -12,7 +12,7 @@
           %span= resource.user_name
         %div
           %span 备注:
-          %span= resource.mark
+          %span= best_in_place resource, :mark, as: :input, url: [:admin, resource]
     %div.account
       %div
         %span 于#{resource.reg_date&.strftime('%Y-%m-%d')}注册
@@ -34,7 +34,8 @@
         %span= link_to resource.topics.count, admin_topics_path(q: { user_id_eq: resource.id })
       %span
         %span 评论
-        %span= resource.comments.count
+        %span= link_to resource.comments.count, admin_comments_path(q: { user_id_eq: resource.id })
       %span
         %span 回复
-        %span= resource.comments.count
+        %span= link_to resource.replies.count, admin_comments_path(q: { user_id_eq: resource.id })
+
