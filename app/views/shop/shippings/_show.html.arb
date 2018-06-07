@@ -6,7 +6,6 @@ context.instance_eval do
   end
 
   return if resource.free_shipping?
-  
   div style: 'float: right; padding: 5px; padding-right: 30px' do
     link_to '创建运费方式', new_shop_shipping_shipping_method_path(resource), remote: true
   end

@@ -5,7 +5,7 @@ ActiveAdmin.register WxBill, namespace: :shop do
 
   index do
     id_column
-    column(:user) { |bill| link_to bill.order.user.nick_name, admin_user_path(bill.order.user_id)}
+    column(:user) { |bill| link_to bill.order.user.nick_name, admin_user_path(bill.order.user_id) }
     column(:order_number) { |bill| link_to bill.order.order_number, shop_order_path(bill.order_id) }
     column(:transaction_id)
     column(:pay_success)
