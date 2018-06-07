@@ -44,6 +44,14 @@ module Shop
 
       redirect_to resource_url(resource)
     end
+
+    member_action :change_refund_price, method: [:get, :post] do
+      return if request.get?
+
+      resource.update(refund_price: params[:refund_price].to_f)
+      flash[:notice] = '修改金额成功'
+      redirect_to resource_url(resource)
+    end
   end
 end
 
