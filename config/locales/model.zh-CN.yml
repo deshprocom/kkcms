@@ -140,6 +140,7 @@
         option_type_alias: '任务'
         option_type: '任务英文名'
         limit_times: '限制次数'
+        icon: '图标'
         points: '增加积分'
         opened: '是否启用'
       comment:
