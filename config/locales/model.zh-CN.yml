@@ -170,7 +170,7 @@
         target_type: '目标类型'
         target_id: '目标ID'
         mark: '备注'
-        received_at: '领取时间'
+        active_at: '领取时间'
         created_at: '创建时间'
         user_nick_name: '用户昵称'
         option_type: '操作类型'
