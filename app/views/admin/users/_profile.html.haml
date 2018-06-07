@@ -34,8 +34,8 @@
         %span= link_to resource.topics.count, admin_topics_path(q: { user_id_eq: resource.id })
       %span
         %span 评论
-        %span= resource.comments.count
+        %span= link_to resource.comments.count, admin_comments_path(q: { user_id_eq: resource.id })
       %span
         %span 回复
-        %span= resource.comments.count
+        %span= link_to resource.replies.count, admin_comments_path(q: { user_id_eq: resource.id })
 
