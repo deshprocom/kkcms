@@ -10,8 +10,6 @@ module Shop
     scope :delivered
     scope :completed
     scope :canceled
-    scope :returning
-    scope :returned
 
     filter :user_email_or_user_mobile, as: :string
     filter :order_number
