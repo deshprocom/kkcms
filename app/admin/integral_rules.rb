@@ -4,7 +4,7 @@ ActiveAdmin.register IntegralRule do
   config.filters = false
   config.batch_actions = false
   actions :all, except: [:show, :destroy]
-  config.sort_order = 'position_desc'
+  config.sort_order = 'position_asc'
 
   index do
     render 'index', context: self
