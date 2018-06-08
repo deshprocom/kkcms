@@ -8,4 +8,5 @@ CarrierWave.configure do |config|
     config.upyun_bucket      = ENV['UPYUN_BUCKET']
     config.upyun_bucket_host = ENV['UPYUN_BUCKET_HOST']
   end
+  config.enable_processing = false
 end
