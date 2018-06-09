@@ -33,4 +33,20 @@ ActiveAdmin.register User do
     @page_title = "关注列表(共计#{resource.following_count})"
     @followings = resource.follow_users.page(params[:page])
   end
+
+  member_action :block, method: [:post] do
+    resource.update(blocked: true, blocked_at: Time.zone.now)
+    render 'update_success'
+  end
+
+  member_action :unblock, method: [:post] do
+    resource.update(blocked: false, blocked_at: Time.zone.now)
+    render 'update_success'
+  end
+
+  member_action :silence_user, method: [:get, :post] do
+    return render :silence unless request.post?
+    resource.silenced!(params[:silence_reason], params[:silence_till])
+    render 'update_success'
+  end
 end
