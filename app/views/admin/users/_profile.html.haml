@@ -17,8 +17,20 @@
       %div
         %span 于#{resource.reg_date&.strftime('%Y-%m-%d')}注册
       %div
-        %span 禁言
-        %span 停封账户
+        %span
+          - if resource.silenced_and_till?
+            %span.color-red 用户已禁言，解禁时间：#{resource.silence_till.strftime('%Y-%m-%d')}
+      %div
+        %span
+          - silence_name = resource.silenced_and_till? ? '解封禁言' : '禁言'
+          = link_to silence_name, silence_user_admin_user_path(resource), method: 'get', remote: true
+        %span
+          - if resource.blocked?
+            = link_to '解封', unblock_admin_user_path(resource), method: 'post',
+                               remote: true, data: { confirm: '确定解封用户吗?' }
+          - else
+            = link_to '停封账号', block_admin_user_path(resource), method: 'post',
+                             remote: true, data: { confirm: '停封后用户将无法登录APP, 确定吗?' }
   %div.middle
     %div.actions
       %span

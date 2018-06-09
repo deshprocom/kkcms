@@ -82,6 +82,7 @@
         followers_count: '粉丝'
         following_count: '关注'
         points: '积分'
+        blocked: '是否封禁'
       weixin_user:
         open_id: '微信ID'
         head_img: '微信头像'
