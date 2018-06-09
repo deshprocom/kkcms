@@ -19,7 +19,7 @@
       %div
         %span
           - if resource.silenced_and_till?
-            %span.color-red 用户已禁言，解禁时间：#{resource.silence_till.strftime('%Y-%m-%d')}
+            %span.color-red 用户已禁言，解禁时间：#{resource.silence_till&.strftime('%Y-%m-%d')}
       %div
         %span
           - silence_name = resource.silenced_and_till? ? '解封禁言' : '禁言'
