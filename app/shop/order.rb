@@ -10,14 +10,12 @@ module Shop
     scope :delivered
     scope :completed
     scope :canceled
-    scope :returning
-    scope :returned
 
     filter :user_email_or_user_mobile, as: :string
     filter :order_number
 
     member_action :cancel, method: [:get, :post] do
-      return render :cancel unless request.post?
+      return render :cancel if request.get?
 
       reason = params[:cancel_reason]
       resource.cancel_order reason

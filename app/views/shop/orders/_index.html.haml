@@ -1,5 +1,5 @@
 %div.shop-orders
-  - @orders.includes(:user, :order_items).each do |order|
+  - @orders.includes(:user, order_items: [:product, :recent_return]).each do |order|
     %div.order_detail
       %div.order-header
         %div
@@ -23,21 +23,18 @@
             %div 商品价格
             %div 购买数量
             %div
-          - items.includes(:variant, :product).each do |item|
-            - variant = item.variant
+          - items.each do |item|
             - product = item.product
             %div.tr
               %div
                 %p= link_to product.title, edit_shop_product_path(product)
-                %p.text_sku= variant.text_sku_values.join(', ')
-              - img = variant.image&.preview || product.preview_icon
-              - if img.present?
-                %div
-                  = link_to image_tag(img, height: 150), target: '_blank'
+                %p.text_sku= item.sku_value.join(', ')
+              %div
+                = image_tag(item.variant_image, height: 150)
               %div
                 <s class="red">#{item.original_price}</s> #{item.price}
               %div= item.number
-              %div= I18n.t("refund.#{item.refund_status}")
+              %div= item.recent_return&.return_status_text
         %div.order-right
           %div.tr
             %div

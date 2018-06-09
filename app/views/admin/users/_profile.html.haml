@@ -12,13 +12,25 @@
           %span= resource.user_name
         %div
           %span 备注:
-          %span= resource.mark
+          %span= best_in_place resource, :mark, as: :input, url: [:admin, resource]
     %div.account
       %div
         %span 于#{resource.reg_date&.strftime('%Y-%m-%d')}注册
       %div
-        %span 禁言
-        %span 停封账户
+        %span
+          - if resource.silenced_and_till?
+            %span.color-red 用户已禁言，解禁时间：#{resource.silence_till.strftime('%Y-%m-%d')}
+      %div
+        %span
+          - silence_name = resource.silenced_and_till? ? '解封禁言' : '禁言'
+          = link_to silence_name, silence_user_admin_user_path(resource), method: 'get', remote: true
+        %span
+          - if resource.blocked?
+            = link_to '解封', unblock_admin_user_path(resource), method: 'post',
+                               remote: true, data: { confirm: '确定解封用户吗?' }
+          - else
+            = link_to '停封账号', block_admin_user_path(resource), method: 'post',
+                             remote: true, data: { confirm: '停封后用户将无法登录APP, 确定吗?' }
   %div.middle
     %div.actions
       %span
@@ -34,7 +46,8 @@
         %span= link_to resource.topics.count, admin_topics_path(q: { user_id_eq: resource.id })
       %span
         %span 评论
-        %span= resource.comments.count
+        %span= link_to resource.comments.count, admin_comments_path(q: { user_id_eq: resource.id })
       %span
         %span 回复
-        %span= resource.comments.count
+        %span= link_to resource.replies.count, admin_comments_path(q: { user_id_eq: resource.id })
+
