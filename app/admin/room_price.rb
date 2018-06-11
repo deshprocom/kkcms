@@ -30,7 +30,7 @@ ActiveAdmin.register HotelRoomPrice, as: 'RoomPrice' do
 
     def destroy
       @room_price.destroy
-      flash[:notice] = '删除成功'
+      flash[:notice] = '删除特定价格成功'
       redirect_to admin_hotel_hotel_room_url(@room.hotel, @room)
     end
 

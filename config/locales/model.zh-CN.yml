@@ -44,6 +44,7 @@
         title: "房间标题"
         text_tags: "房间标签"
         text_notes: "房间提示"
+        published: "是否上架"
       hotel_room_price:
         price: "价格"
         date: "日期"
