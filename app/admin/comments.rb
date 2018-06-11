@@ -20,4 +20,10 @@ ActiveAdmin.register Comment do
     resource.unexcellent!
     redirect_back fallback_location: admin_comments_url, notice: I18n.t('unpublish_notice')
   end
+
+  member_action :delete_comment, method: [:get, :post] do
+    return render :delete unless request.post?
+    resource.update(deleted_reason: params[:reason], deleted_at: Time.zone.now)
+    redirect_back fallback_location: admin_comments_url, notice: '删除成功'
+  end
 end

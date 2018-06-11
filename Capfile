@@ -29,7 +29,7 @@ require 'capistrano/scm/git-with-submodules'
 install_plugin Capistrano::SCM::Git::WithSubmodules
 
 # Include tasks from other gems included in your Gemfile
-#
+require "whenever/capistrano"
 # For documentation on these, see for example:
 #
 #   https://github.com/capistrano/rvm
