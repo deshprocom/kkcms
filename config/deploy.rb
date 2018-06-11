@@ -12,6 +12,7 @@ set :default_env, { path: '$PATH:/home/deploy/.nvm/v8.5.0/bin' }
 append :linked_files, '.env'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
 
+set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
