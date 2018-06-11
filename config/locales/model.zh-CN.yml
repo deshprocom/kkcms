@@ -19,6 +19,7 @@
       integral: '积分明细'
       comment: '评论管理'
       sms_log: '短信日志'
+      view_rule: '浏览量规则'
     attributes:
       admin_user:
         email: "邮箱"
@@ -106,6 +107,8 @@
         status: '状态'
         excellent: '是否精选'
         cover_link: '封面'
+        page_views: '浏览量(真实)'
+        view_increment: '浏览量(增量)'
         created_at: '创建时间'
         updated_at: '修改时间'
       report:
@@ -177,6 +180,14 @@
         user_nick_name: '用户昵称'
         option_type: '操作类型'
         points: '积分'
+      view_rule:
+        day: '第几天'
+        interval: '间隔时间(分钟)'
+        min_increase: '最小值'
+        max_increase: '最大值'
+        hot: '热增长'
+        created_at: "创建时间"
+        updated_at: "修改时间"
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'
