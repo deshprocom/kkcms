@@ -1,0 +1,26 @@
+context.instance_eval do
+  attributes_table do
+    row(:hotel)
+    row(:title)
+    row(:text_tags)
+    row(:text_notes)
+    row('默认价格') { |room| room.master.price }
+  end
+
+  div style: 'float: right; padding: 5px; padding-right: 30px' do
+    link_to '增加特定价格', new_admin_hotel_room_room_price_path(resource), remote: true
+  end
+  panel '指定日期的特定价格' do
+    table_for resource.prices do
+      column(:date)
+      column(:price)
+      column('操作') do |price|
+        span link_to('编辑', edit_admin_hotel_room_room_price_url(resource, price), remote: true)
+        span '|'
+        span link_to('删除', admin_hotel_room_room_price_url(resource, price),
+                     method: :delete,
+                     data: { confirm: '确定删除吗？' })
+      end
+    end
+  end
+end
