@@ -33,9 +33,7 @@
             = comment_excellent_link comment
         %div
           %span
-            删除
-          %span
-            回复
+            = link_to '删除', delete_comment_admin_comment_path(comment), remote: true
       %div.reply-container
         - comment.replies.each do |reply|
           %div.reply-body
@@ -62,9 +60,7 @@
                 %span= comment.created_at.strftime('%Y-%m-%d')
               %div
                 %span
-                  删除
-                %span
-                  回复
+                  = link_to '删除', delete_reply_admin_reply_path(reply), remote: true
 
   %div{style: 'text-align: right'}
     %a{ href: '#', class: 'btn-move-page', 'data-type': 'top'}
