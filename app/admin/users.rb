@@ -22,6 +22,12 @@ ActiveAdmin.register User do
     end
   end
 
+  controller do
+    def scoped_collection
+      User.includes(:counter)
+    end
+  end
+
   member_action :profile, method: :get
 
   member_action :followers, method: :get do

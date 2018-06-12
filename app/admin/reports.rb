@@ -9,4 +9,15 @@ ActiveAdmin.register Report do
   index do
     render 'index', context: self
   end
+
+  member_action :ignore, method: :post do
+    resource.ignored!
+    redirect_back fallback_location: admin_reports_url, notice: '忽略成功'
+  end
+
+  controller do
+    def scoped_collection
+      super.where(ignored: false)
+    end
+  end
 end
