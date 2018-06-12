@@ -30,7 +30,7 @@ context.instance_eval do
 
     column do
       div style: 'float: right; padding: 5px; margin-top: 11px; margin-right: 10px;' do
-        link_to '增加特定价格', new_admin_hotel_room_room_image_path(resource), remote: true
+        link_to '增加图片', new_admin_hotel_room_room_image_path(resource), remote: true
       end
 
       panel '房间图片列表' do
