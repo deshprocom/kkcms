@@ -1,0 +1,13 @@
+- resource.master   || resource.build_master
+- url = resource.new_record? ? collection_path : resource_path(resource)
+= semantic_form_for resource, url: url do |f|
+  = f.semantic_errors *f.object.errors.keys
+  = f.inputs do
+    = f.input :hotel, collection: [[@hotel.title, @hotel.id]], prompt: true
+    = f.input :title
+    = f.input :text_tags, hint: '每个标签以逗号分开。例： WIFI, 双床'
+    = f.input :text_notes, hint: '每个提示以逗号分开。例： 含早餐, 可住两人'
+    = f.semantic_fields_for :master do |form|
+      = form.input :price
+    = f.input :published
+  = f.actions
