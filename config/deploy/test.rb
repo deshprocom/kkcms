@@ -11,7 +11,7 @@ server '36.255.222.190',
        }
 
 role :resque_worker, %w{36.255.222.190}
-# set :workers, {send_email_sms: 1, send_mobile_sms: 1}
+# set :workers, {send_mobile_sms: 1}
 
 set :deploy_to, '/deploy/test/kkcms'
 set :branch, ENV.fetch('REVISION', ENV.fetch('BRANCH', 'test'))
