@@ -90,6 +90,7 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano3-puma'
   gem 'capistrano-git-with-submodules', '~> 2.0'
+  gem "capistrano-resque", "~> 0.2.2", require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
