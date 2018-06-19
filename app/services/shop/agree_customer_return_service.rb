@@ -15,7 +15,7 @@ module Shop
     end
 
     # 如果是换货类型直接确认成功
-    def precess_exchange_goods
+    def process_exchange_goods
       complete_return!
       ApiResult.success_result
     end
