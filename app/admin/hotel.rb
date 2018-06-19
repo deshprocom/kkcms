@@ -1,4 +1,6 @@
 ActiveAdmin.register Hotel do
+  menu parent: '酒店管理'
+
   filter :id
   filter :title
   filter :location
