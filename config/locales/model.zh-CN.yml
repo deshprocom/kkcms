@@ -47,8 +47,13 @@
         checkin_date: '入住时间'
         checkout_date: '离店时间'
         room_num: '房间数'
+        total_price: '总计金额'
         final_price: '支付金额'
+        discount_amount: '折扣金额'
+        refund_price: '退款金额'
         status: '订单状态'
+        pay_status: '支付状态'
+        telephone: '联系方式'
       hotel_room:
         hotel: "酒店"
         title: "房间标题"
