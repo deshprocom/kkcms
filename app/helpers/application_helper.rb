@@ -9,7 +9,8 @@ module ApplicationHelper
     context.instance_eval do
       ul do
         li link_to '酒店详情', admin_hotel_path(hotel)
-        li link_to '图片管理', admin_hotel_images_path(hotel)
+        li link_to '酒店房间管理', admin_hotel_hotel_rooms_path(hotel)
+        li link_to '酒店图片管理', admin_hotel_images_path(hotel)
       end
     end
   end

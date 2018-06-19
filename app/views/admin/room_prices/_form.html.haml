@@ -1,0 +1,8 @@
+%div
+  - url = @room_price.new_record? ? admin_hotel_room_room_prices_path(@room) : admin_hotel_room_room_price_path(@room, @room_price)
+  = semantic_form_for @room_price, url: url, remote: true do |f|
+    = f.semantic_errors *f.object.errors.keys
+    = f.inputs do
+      = f.input :price
+      = f.input :date
+    = f.actions

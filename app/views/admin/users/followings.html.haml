@@ -4,12 +4,10 @@
       %tr
         %th 头像
         %th 昵称
-        %th 关注时间
     %tbody
       - @followings.each do |user|
         %tr
           %td= avatar_profile(user, size: 60)
           %td= user.nick_name
-          %td= resource.created_at.strftime("%F %T")
   %div.index_foot
     = paginate(@followings, remote: true)
