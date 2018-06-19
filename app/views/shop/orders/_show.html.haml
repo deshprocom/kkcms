@@ -65,7 +65,7 @@
           %span= "联系方式：#{address.mobile}"
           %span= "收货地址：#{address.full_address}"
         %div
-          %span= "用户备注：#{address.memo}"
+          %span= "用户备注：#{order.memo}"
       %div
         %div 退换货申请
         - order.customer_returns.each do |c_return|
