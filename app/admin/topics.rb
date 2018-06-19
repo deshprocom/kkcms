@@ -1,4 +1,3 @@
-TRANS_TOPIC_STATUSES = Topic.statuses.keys.collect { |d| [I18n.t("status.#{d}"), d] }
 ActiveAdmin.register Topic do
   menu priority: 2, label: '说说长帖', parent: '社交管理'
   actions :all, except: [:new, :create, :edit, :update, :destroy]
