@@ -4,6 +4,8 @@ context.instance_eval do
     row(:title)
     row(:location)
     row(:telephone)
+    row(:star_level)
+    row(:start_price)
     row(:published)
     row(:description) { |hotel| sanitize hotel.description }
   end

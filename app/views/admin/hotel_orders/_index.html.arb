@@ -15,12 +15,15 @@ context.instance_eval do
   column(:room_num)
   column(:final_price)
   column(:status) { |order| I18n.t("hotel_order.#{order.status}") }
-
   actions defaults: false do |order|
     item I18n.t('active_admin.view'), resource_url(order),
          title:  I18n.t('active_admin.view'),
          target: '_blank',
          class:  'member_link'
+
+    item '确认有房', confirm_admin_hotel_order_url(order), method: :post if order.paid?
+
+    item '取消确认有房', unconfirm_admin_hotel_order_url(order), method: :post if order.confirmed?
   end
 end
 
