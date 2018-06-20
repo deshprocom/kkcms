@@ -25,6 +25,10 @@
   unexcellent: '取消精选'
   hotel:
     destroy_error: '已发布的酒店，不允许删除'
+  hotel_order:
+    paid: '已支付'
+    unpaid: '未支付'
+    confirmed: '已确认'
   info:
     destroy_error: '已发布的资讯，不允许删除'
   exchange_rate:

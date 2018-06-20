@@ -5,6 +5,7 @@
       hotel: "酒店"
       hotel_room: "酒店房间"
       hotel_room_price: "房间价格"
+      hotel_order: "酒店订单"
       info: "资讯"
       info_type: "资讯类型"
       exchange_rate: "汇率"
@@ -40,6 +41,20 @@
         published: "是否发布"
         telephone: "联系电话"
         doc: "导入文档"
+      hotel_order:
+        user: '用户'
+        order_number: '订单编号'
+        checkin_date: '入住时间'
+        checkout_date: '离店时间'
+        room_num: '房间数'
+        total_price: '总计金额'
+        final_price: '支付金额'
+        discount_amount: '折扣金额'
+        refund_price: '退款金额'
+        status: '订单状态'
+        pay_status: '支付状态'
+        telephone: '联系方式'
+        user_email_or_user_mobile: '用户账户(手机或邮箱)'
       hotel_room:
         hotel: "酒店"
         title: "房间标题"
