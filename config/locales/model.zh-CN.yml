@@ -41,6 +41,8 @@
         published: "是否发布"
         telephone: "联系电话"
         doc: "导入文档"
+        star_level: "星级"
+        start_price: "起始价"
       hotel_order:
         user: '用户'
         order_number: '订单编号'
