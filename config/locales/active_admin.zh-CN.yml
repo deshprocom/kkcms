@@ -25,6 +25,11 @@
   unexcellent: '取消精选'
   hotel:
     destroy_error: '已发布的酒店，不允许删除'
+  hotel_refund:
+    pending: '等待处理中'
+    refused: '已拒绝该申请'
+    completed: '已成功退款'
+    cancel_return: '该申请用户已撤消'
   hotel_order:
     paid: '已支付'
     unpaid: '未支付'

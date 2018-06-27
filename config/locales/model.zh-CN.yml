@@ -6,6 +6,7 @@
       hotel_room: "酒店房间"
       hotel_room_price: "房间价格"
       hotel_order: "酒店订单"
+      hotel_refund: "退款列表"
       info: "资讯"
       info_type: "资讯类型"
       exchange_rate: "汇率"
@@ -65,6 +66,13 @@
         text_tags: "房间标签"
         text_notes: "房间提示"
         published: "是否上架"
+      hotel_refund:
+        user: '用户'
+        order: '订单'
+        refund_status: '订单状态'
+        refund_price: '退款金额'
+        memo: '用户备注'
+        admin_memo: '管理员备注'
       hotel_room_price:
         price: "价格"
         date: "日期"
