@@ -245,7 +245,9 @@
         coupon_temp: '用途'
         expire_day: '有效期(天)'
         receive_time: '领取时间'
+        expire_time: '领取时间'
         user_id: '用户'
+        target: '目标'
         target_type: '消费路径'
         close_time: '下单时间'
         created_at: "创建时间"
