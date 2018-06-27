@@ -237,8 +237,9 @@
         discount: '折扣'
         integral_on: '开启积分兑换'
         integrals: '积分'
-        created_at: "创建时间"
-        updated_at: "修改时间"
+        published: '是否发布'
+        created_at: '创建时间'
+        updated_at: '修改时间'
       coupon:
         coupon_number: '券编号'
         coupon_temp: '用途'

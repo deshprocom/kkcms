@@ -19,4 +19,14 @@ ActiveAdmin.register CouponTemp do
     end
     redirect_back fallback_location: admin_coupon_temps_url, notice: '创建成功'
   end
+
+  member_action :publish, method: :post do
+    resource.publish!
+    redirect_back fallback_location: admin_coupon_temps_url, notice: I18n.t('publish_notice')
+  end
+
+  member_action :unpublish, method: :post do
+    resource.unpublish!
+    redirect_back fallback_location: admin_coupon_temps_url, notice: I18n.t('unpublish_notice')
+  end
 end
