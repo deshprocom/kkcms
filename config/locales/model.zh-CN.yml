@@ -228,6 +228,7 @@
         updated_at: "修改时间"
       coupon_temp:
         name: '名称'
+        cover_link: '封面图'
         short_desc: '条件说明'
         coupon_type: '使用类型'
         discount_type: '优惠类型'
