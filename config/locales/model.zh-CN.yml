@@ -24,6 +24,8 @@
       comment: '评论管理'
       sms_log: '短信日志'
       view_rule: '浏览量规则'
+      coupon_temp: '优惠券模版'
+      coupon: '优惠券'
     attributes:
       admin_user:
         email: "邮箱"
@@ -225,6 +227,32 @@
         hot: '热增长'
         created_at: "创建时间"
         updated_at: "修改时间"
+      coupon_temp:
+        name: '名称'
+        cover_link: '封面图'
+        short_desc: '条件说明'
+        coupon_type: '使用类型'
+        discount_type: '优惠类型'
+        new_user: '新用户'
+        limit_price: '限制金额'
+        reduce_price: '优惠金额'
+        discount: '折扣'
+        integral_on: '开启积分兑换'
+        integrals: '积分'
+        published: '是否发布'
+        created_at: '创建时间'
+        updated_at: '修改时间'
+      coupon:
+        coupon_number: '券编号'
+        coupon_temp: '用途'
+        expire_day: '有效期(天)'
+        receive_time: '领取时间'
+        expire_time: '领取时间'
+        user_id: '用户'
+        target: '目标'
+        target_type: '消费路径'
+        close_time: '下单时间'
+        created_at: "创建时间"
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'

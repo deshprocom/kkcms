@@ -77,6 +77,14 @@
     topic: '说说|长帖'
     info: '资讯'
     hotel: '酒店'
+  coupon_type:
+    hotel: '酒店'
+    shop: '商城'
+    new_user: '新用户'
+  discount_type:
+    reduce: '立减'
+    full_reduce: '满减'
+    rebate: '折扣'
   time:
     formats:
       long: "%Y-%m-%d %H:%M:%S"

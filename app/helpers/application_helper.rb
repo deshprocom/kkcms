@@ -31,6 +31,14 @@ module ApplicationHelper
     end
   end
 
+  def coupon_temp_publish_link(coupon_temp)
+    if coupon_temp.published?
+      link_to I18n.t('unpublish'), unpublish_admin_coupon_temp_path(coupon_temp), method: :post
+    else
+      link_to I18n.t('publish'), publish_admin_coupon_temp_path(coupon_temp), method: :post
+    end
+  end
+
   def info_sticky_link(info)
     if info.stickied?
       link_to I18n.t('unsticky'), unsticky_admin_info_path(info), method: :post
