@@ -20,6 +20,7 @@ context.instance_eval do
     row(:refund_price)
     row(:status) { |order| I18n.t("hotel_order.#{order.status}") }
     row(:pay_status) { |order| I18n.t("hotel_order.#{order.pay_status}") }
+    row(:pay_channel)
   end
 
   columns do

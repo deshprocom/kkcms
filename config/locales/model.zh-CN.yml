@@ -56,6 +56,7 @@
         refund_price: '退款金额'
         status: '订单状态'
         pay_status: '支付状态'
+        pay_channel: '支付渠道'
         telephone: '联系方式'
         user_email_or_user_mobile: '用户账户(手机或邮箱)'
       hotel_room:
