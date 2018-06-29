@@ -250,7 +250,7 @@
         user_id: '用户'
         target: '目标'
         target_type: '消费路径'
-        close_time: '下单时间'
+        pay_time: '下单时间'
         created_at: "创建时间"
       format: "%{attribute}%{message}"
       messages:
