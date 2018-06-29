@@ -65,6 +65,9 @@ gem 'action-store'
 # 微信支付
 gem 'wx_pay'
 
+# 支付宝相关
+gem 'alipay', '~> 0.15.1'
+
 gem 'whenever', require: false
 
 group :development, :test do

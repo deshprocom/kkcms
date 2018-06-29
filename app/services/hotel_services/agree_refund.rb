@@ -18,15 +18,8 @@ module HotelServices
 
       return error_result('已超过入住时间，不允许退款') if over_checkin_date?
 
-      result = WxPay::Service.invoke_refund(refund_params)
-      Rails.logger.info("Hotel::AgreeRefundService number=#{@refund.out_refund_no}: #{result}")
-      unless sign_correct?(result[:raw]['xml'])
-        return error_result('验证签名失败')
-      end
-
-      unless result.success?
-        return error_result(result['err_code_des'])
-      end
+      result = RefundService.call(@order, @refund)
+      return result if result.failure?
 
       @refund.completed!
       @order.update(status: 'refunded', refund_price: @refund.refund_price)
@@ -39,21 +32,6 @@ module HotelServices
 
     def over_checkin_date?
       Time.now > @order.checkin_date + 1.day
-    end
-
-    private
-
-    def sign_correct?(result)
-      WxPay::Sign.verify?(result)
-    end
-
-    def refund_params
-      {
-        out_refund_no: @refund.out_refund_no,
-        out_trade_no: @order.order_number,
-        refund_fee: (@refund.refund_price * 100).to_i,
-        total_fee: (@order.final_price * 100).to_i
-      }
     end
   end
 end

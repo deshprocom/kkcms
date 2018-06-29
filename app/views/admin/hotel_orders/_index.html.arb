@@ -15,6 +15,7 @@ context.instance_eval do
   column(:room_num)
   column(:final_price)
   column(:status) { |order| I18n.t("hotel_order.#{order.status}") }
+  column(:pay_channel)
   actions defaults: false do |order|
     item I18n.t('active_admin.view'), resource_url(order),
          title:  I18n.t('active_admin.view'),

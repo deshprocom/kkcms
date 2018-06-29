@@ -23,15 +23,8 @@ module Shop
     def process_refund
       return error_result('超出了可退款金额') if refundable_price_over?
 
-      result = WxPay::Service.invoke_refund(refund_params)
-      Rails.logger.info("ShopOrders::RefundService number=#{@c_return.out_refund_no}: #{result}")
-      unless sign_correct?(result[:raw]['xml'])
-        return error_result('验证签名失败')
-      end
-
-      unless result.success?
-        return error_result(result['err_code_des'])
-      end
+      result = RefundService.call(@order, @c_return)
+      return result if result.failure?
 
       complete_return!
       calc_order_refunded_price!
@@ -65,21 +58,6 @@ module Shop
 
         variant.product.master.increase_stock(item.order_item.number)
       end
-    end
-
-    private
-
-    def sign_correct?(result)
-      WxPay::Sign.verify?(result)
-    end
-
-    def refund_params
-      {
-        out_refund_no: @c_return.out_refund_no,
-        out_trade_no: @order.order_number,
-        refund_fee: (@c_return.refund_price * 100).to_i,
-        total_fee: (@order.final_price * 100).to_i
-      }
     end
   end
 end
