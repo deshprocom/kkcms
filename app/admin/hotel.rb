@@ -9,7 +9,7 @@ ActiveAdmin.register Hotel do
     render 'index', context: self
   end
 
-  permit_params :title, :logo, :location, :telephone, :description, :star_level, :start_price
+  permit_params :title, :logo, :location, :telephone, :description, :star_level, :start_price, :amap_poiid
   form partial: 'form'
 
   show do

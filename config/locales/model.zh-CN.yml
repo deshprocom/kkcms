@@ -39,6 +39,7 @@
       hotel:
         title: "酒店标题"
         location: "地点"
+        amap_poiid: "高德地图poi"
         logo: "酒店图标"
         description: "酒店描述"
         published: "是否发布"
