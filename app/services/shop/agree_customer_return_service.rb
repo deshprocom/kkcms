@@ -29,6 +29,7 @@ module Shop
       complete_return!
       calc_order_refunded_price!
       restock_when_undelivered
+      reduce_integral
       ApiResult.success_result
     end
 
@@ -58,6 +59,13 @@ module Shop
 
         variant.product.master.increase_stock(item.order_item.number)
       end
+    end
+
+    def reduce_integral
+      Integral.create_refund_to_integral(user: @order.user,
+                                         target: @order,
+                                         price: @order.final_price,
+                                         option_type: @order.model_name.singular)
     end
   end
 end

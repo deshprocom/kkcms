@@ -21,9 +21,22 @@ module HotelServices
       result = RefundService.call(@order, @refund)
       return result if result.failure?
 
+      refund_coupon
+      reduce_integral
       @refund.completed!
       @order.update(status: 'refunded', refund_price: @refund.refund_price)
       ApiResult.success_result
+    end
+
+    def refund_coupon
+      @order.coupon && @order.coupon.update(coupon_status: 'refund', refund_time: Time.now)
+    end
+
+    def reduce_integral
+      Integral.create_refund_to_integral(user: @order.user,
+                                         target: @order,
+                                         price: @order.final_price,
+                                         option_type: @order.model_name.singular)
     end
 
     def refundable_price_over?

@@ -36,6 +36,7 @@
     confirmed: '已确认'
     deleted: '已删除'
     canceled: '已取消'
+    refunded: '已退款'
   info:
     destroy_error: '已发布的资讯，不允许删除'
   exchange_rate:
