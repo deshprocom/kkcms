@@ -64,7 +64,7 @@ module Shop
     def reduce_integral
       Integral.create_refund_to_integral(user: @order.user,
                                          target: @order,
-                                         price: @order.final_price,
+                                         price: @c_return.refund_price,
                                          option_type: @order.model_name.singular)
     end
   end
