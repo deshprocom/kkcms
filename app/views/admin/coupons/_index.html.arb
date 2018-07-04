@@ -4,7 +4,6 @@ context.instance_eval do
   column :coupon_temp, sortable: false do |t|
     I18n.t("coupon_type.#{t.coupon_temp.coupon_type}")
   end
-  column :expire_day
   column :receive_time
   column :expire_time
   column :user_id, sortable: false do |t|
