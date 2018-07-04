@@ -237,6 +237,7 @@
         new_user: '新用户'
         limit_price: '限制金额'
         reduce_price: '优惠金额'
+        expire_day: '有效期(天)'
         discount: '折扣'
         integral_on: '开启积分兑换'
         integrals: '积分'
@@ -246,7 +247,6 @@
       coupon:
         coupon_number: '券编号'
         coupon_temp: '用途'
-        expire_day: '有效期(天)'
         receive_time: '领取时间'
         expire_time: '过期时间'
         user_id: '用户'

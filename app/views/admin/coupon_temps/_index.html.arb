@@ -11,6 +11,7 @@ context.instance_eval do
   column :limit_price
   column :reduce_price
   column :discount
+  column :expire_day
   column :integral_on, sortable: false
   column :integrals
   column(:published, sortable: false) { |temp| coupon_temp_publish_link(temp) }
