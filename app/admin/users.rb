@@ -55,4 +55,8 @@ ActiveAdmin.register User do
     resource.silenced!(params[:silence_reason], params[:silence_till])
     render 'update_success'
   end
+
+  collection_action :search_user_modal, method: :get do
+    render 'search_user_modal'
+  end
 end
