@@ -48,6 +48,7 @@
         doc: "导入文档"
         star_level: "星级"
         start_price: "起始价"
+        region: '区域'
       hotel_order:
         user: '用户'
         order_number: '订单编号'
