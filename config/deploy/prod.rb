@@ -10,8 +10,8 @@ server '36.255.222.206',
            # password: 'please use keys'
        }
 
-# role :resque_worker, %w{36.255.222.206}
-# set :workers, {send_email_sms: 1, send_mobile_sms: 1}
+role :resque_worker, %w{36.255.222.206}
+set :workers, {'*': 1}
 
 set :deploy_to, '/deploy/production/kkcms'
 set :branch, ENV.fetch('REVISION', ENV.fetch('BRANCH', 'production'))

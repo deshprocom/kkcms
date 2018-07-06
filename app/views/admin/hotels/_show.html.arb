@@ -2,8 +2,11 @@ context.instance_eval do
   attributes_table do
     row(:logo) { |hotel| image_tag(hotel.preview_logo, height: 150) }
     row(:title)
-    row(:location)
+    row(:location) { |hotel| link_to hotel.location, "http://uri.amap.com/marker?poiid=#{hotel.amap_poiid}", target: '_blank'}
+    row(:amap_poiid)
     row(:telephone)
+    row(:star_level)
+    row(:start_price)
     row(:published)
     row(:description) { |hotel| sanitize hotel.description }
   end

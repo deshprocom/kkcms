@@ -3,7 +3,10 @@
   = f.inputs do
     = f.input :title
     = f.input :location
+    = f.input :amap_poiid
     = f.input :telephone
+    = f.input :star_level
+    = f.input :start_price
     = f.input :logo, as: :attachment, required: true,
                      hint: '图片最大为 2MB',
                      image: proc { |o| o.preview_logo }

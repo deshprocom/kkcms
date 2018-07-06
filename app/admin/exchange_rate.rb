@@ -1,4 +1,5 @@
 ActiveAdmin.register ExchangeRate do
+  menu parent: '外汇管理'
   config.filters = false
 
   permit_params :s_currency, :s_currency_no, :t_currency, :t_currency_no, :rate, :rate_type

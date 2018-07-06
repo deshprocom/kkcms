@@ -36,6 +36,11 @@
 
     span.ui-button-icon { font-size: 1em; }
   }
+
+  tbody tr:hover {
+    background-color: #b3b3b3;
+    cursor:pointer
+  }
 }
 
 a.action {

@@ -25,6 +25,18 @@
   unexcellent: '取消精选'
   hotel:
     destroy_error: '已发布的酒店，不允许删除'
+  hotel_refund:
+    pending: '等待处理中'
+    refused: '已拒绝该申请'
+    completed: '已成功退款'
+    cancel_return: '该申请用户已撤消'
+  hotel_order:
+    paid: '已支付'
+    unpaid: '未支付'
+    confirmed: '已确认'
+    deleted: '已删除'
+    canceled: '已取消'
+    refunded: '已退款'
   info:
     destroy_error: '已发布的资讯，不允许删除'
   exchange_rate:
@@ -66,6 +78,14 @@
     topic: '说说|长帖'
     info: '资讯'
     hotel: '酒店'
+  coupon_type:
+    hotel: '酒店'
+    shop: '商城'
+    new_user: '新用户'
+  discount_type:
+    reduce: '立减'
+    full_reduce: '满减'
+    rebate: '折扣'
   time:
     formats:
       long: "%Y-%m-%d %H:%M:%S"
