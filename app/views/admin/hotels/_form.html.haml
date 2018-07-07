@@ -2,6 +2,7 @@
   = f.semantic_errors *f.object.errors.keys
   = f.inputs do
     = f.input :title
+    = f.input :region, collection: Hotel::REGIONS_MAP.invert, prompt: true
     = f.input :location
     = f.input :amap_poiid
     = f.input :telephone
