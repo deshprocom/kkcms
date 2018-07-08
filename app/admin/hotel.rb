@@ -9,7 +9,8 @@ ActiveAdmin.register Hotel do
     render 'index', context: self
   end
 
-  permit_params :title, :logo, :location, :telephone, :description, :star_level, :start_price, :amap_poiid, :region
+  permit_params :title, :logo, :location, :telephone, :description, :star_level,
+                :start_price, :amap_poiid, :region, :amap_location
   form partial: 'form'
 
   show do
@@ -24,6 +25,14 @@ ActiveAdmin.register Hotel do
   member_action :unpublish, method: :post do
     Hotel.find(params[:id]).unpublish!
     redirect_back fallback_location: admin_hotels_url, notice: I18n.t('unpublish_notice')
+  end
+
+  collection_action :amap_detail, method: :get do
+    response = Faraday.get('https://restapi.amap.com/v3/place/detail',
+                key: ENV['AMAP_KEY'],
+                id: params[:poiid])
+    pois = JSON.parse(response.body)['pois']
+    @poi = pois.presence ? pois[0] : {}
   end
 
   controller do
