@@ -39,6 +39,14 @@ module ApplicationHelper
     end
   end
 
+  def invite_award_publish_link(resource)
+    if resource.published?
+      link_to I18n.t('unpublish'), unpublish_admin_invite_award_path(resource), method: :post
+    else
+      link_to I18n.t('publish'), publish_admin_invite_award_path(resource), method: :post
+    end
+  end
+
   def info_sticky_link(info)
     if info.stickied?
       link_to I18n.t('unsticky'), unsticky_admin_info_path(info), method: :post
