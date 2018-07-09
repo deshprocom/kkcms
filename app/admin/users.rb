@@ -59,4 +59,8 @@ ActiveAdmin.register User do
   collection_action :search_user_modal, method: :get do
     render 'search_user_modal'
   end
+
+  action_item :invite_awards, only: :index do
+    link_to '分销奖励', admin_invite_awards_path
+  end
 end
