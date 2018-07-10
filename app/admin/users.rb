@@ -32,11 +32,13 @@ ActiveAdmin.register User do
     def create
       email = user_params[:email]
       password = user_params[:password]
-      if !UserValidator.email_valid?(email) || password.blank?
-        return redirect_back fallback_location: admin_users_url, notice: '用户创建失败'
+      if !UserValidator.email_valid?(email) || password.blank? || UserValidator.email_exists?(email)
+        return redirect_back fallback_location: admin_users_url, notice: '用户创建失败，请检查邮箱是否重复，格式是否正确!'
       end
       password_md5 = ::Digest::MD5.hexdigest(password)
-      User.create_by_email(email, password_md5)
+      user = User.create_by_email(email, password_md5)
+      UserRelation.create({ user: user, level: 0 })
+      user.update(new_user: false)
       redirect_back fallback_location: admin_users_url, notice: '用户创建成功'
     end
 
