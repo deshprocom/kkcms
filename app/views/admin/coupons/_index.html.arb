@@ -12,6 +12,9 @@ context.instance_eval do
   column :target
   column :pay_time
   column :created_at
+  column :coupon_status, sortable: false do |t|
+    I18n.t("coupon_status.#{t.coupon_status}")
+  end
   actions name: '操作', defaults: false do |coupon|
     if coupon.receive_time.blank?
       item '删除', admin_coupon_path(coupon), method: :delete, data: { confirm: '确定删除吗？' }

@@ -82,6 +82,11 @@
     hotel: '酒店'
     shop: '商城'
     new_user: '新用户'
+  coupon_status:
+    init: '未领取'
+    unused: '未使用'
+    used: '已使用'
+    refund: '已退还'
   discount_type:
     reduce: '立减'
     full_reduce: '满减'
