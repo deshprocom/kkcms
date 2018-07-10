@@ -14,10 +14,5 @@
     = f.input :new_user
     = f.input :integral_on
     = f.input :integrals
-    ~ f.text_area :description
+    = f.input :published
     = f.actions
-
-:javascript
-  $(function() {
-    dpEditor.call($('#coupon_temp_description'), $('form.coupon_temp'));
-  });
