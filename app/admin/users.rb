@@ -76,6 +76,11 @@ ActiveAdmin.register User do
     render 'update_success'
   end
 
+  collection_action :search_mobile_user, method: [:get] do
+    @user = User.by_mobile(params[:mobile])
+    render 'user_info'
+  end
+
   collection_action :search_user_modal, method: :get do
     render 'search_user_modal'
   end
