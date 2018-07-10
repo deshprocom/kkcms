@@ -17,7 +17,8 @@ context.instance_eval do
   end
   actions name: '操作', defaults: false do |coupon|
     if coupon.receive_time.blank?
-      item '删除', admin_coupon_path(coupon), method: :delete, data: { confirm: '确定删除吗？' }
+      item '删除 ', admin_coupon_path(coupon), method: :delete, data: { confirm: '确定删除吗？' }
+      item ' 发放', award_admin_coupon_path(coupon), remote: true
     end
   end
 end
