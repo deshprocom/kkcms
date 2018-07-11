@@ -8,8 +8,10 @@ context.instance_eval do
     row(:amap_location)
     row(:telephone)
     row(:star_level)
-    row(:start_price)
     row(:published)
+    HotelRoomPrice::WDAYS.each do |wday|
+      row("#{wday}_min_price")
+    end
     row(:description) { |hotel| sanitize hotel.description }
   end
 end

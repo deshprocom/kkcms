@@ -10,7 +10,7 @@ ActiveAdmin.register Hotel do
   end
 
   permit_params :title, :logo, :location, :telephone, :description, :star_level,
-                :start_price, :amap_poiid, :region, :amap_location
+                :amap_poiid, :region, :amap_location
   form partial: 'form'
 
   show do

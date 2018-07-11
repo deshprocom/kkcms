@@ -50,6 +50,13 @@
         star_level: "星级"
         start_price: "起始价"
         region: '区域'
+        mon_min_price: '星期一最低价'
+        tue_min_price: '星期二最低价'
+        wed_min_price: '星期三最低价'
+        thu_min_price: '星期四最低价'
+        fri_min_price: '星期五最低价'
+        sat_min_price: '星期六最低价'
+        sun_min_price: '星期日最低价'
       hotel_order:
         user: '用户'
         order_number: '订单编号'

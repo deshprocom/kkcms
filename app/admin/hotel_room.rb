@@ -16,13 +16,31 @@ ActiveAdmin.register HotelRoom do
 
     def create
       if @hotel_room.save
-        week_prices_params.each do |wday, price|
-          @hotel_room.cwday_prices.create(wday: wday, price: price, hotel_id: @hotel.id)
-        end
+        update_wday_prices
         redirect_to resource_path(@hotel_room)
       else
         flash[:error] = '创建失败'
         render :new
+      end
+    end
+
+    def update
+      if @hotel_room.update(permitted_params[:hotel_room])
+        HotelRoomPrice.where(hotel_room_id: @hotel_room.id, is_master: true).delete_all
+        update_wday_prices
+        redirect_to resource_path(@hotel_room)
+      else
+        flash[:error] = '更新失败'
+        render :new
+      end
+    end
+
+    def update_wday_prices
+      week_prices_params.each do |wday, price|
+        @hotel_room.wday_prices.create(wday: wday, price: price, hotel_id: @hotel.id)
+        # 更新酒店一周的最低价格
+        wday_price = @hotel.wday_min_price(wday)
+        @hotel.update("#{wday}_min_price": wday_price.price)
       end
     end
 
@@ -50,7 +68,7 @@ ActiveAdmin.register HotelRoom do
     end
 
     def set_hotel_room
-      @hotel_room = HotelRoom.new(permitted_params[:hotel_room])
+      @hotel_room = params[:id] ? HotelRoom.find(params[:id]) : HotelRoom.new(permitted_params[:hotel_room])
     end
   end
 
