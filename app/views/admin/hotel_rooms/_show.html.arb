@@ -4,8 +4,10 @@ context.instance_eval do
     row(:title)
     row(:text_tags)
     row(:text_notes)
-    row('默认价格') { |room| room.master.price }
     row(:published)
+    HotelRoomPrice::WDAYS.each do |wday|
+      row(I18n.t "helpers.label.week_prices.#{wday}" ) { |room| room.send("#{wday}_price")&.price }
+    end
   end
   columns do
     column do
