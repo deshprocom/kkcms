@@ -27,6 +27,7 @@
       view_rule: '浏览量规则'
       coupon_temp: '优惠券模版'
       coupon: '优惠券'
+      invite_award: '分销奖励'
     attributes:
       admin_user:
         email: "邮箱"
@@ -137,6 +138,7 @@
         followers_count: '粉丝'
         following_count: '关注'
         points: '积分'
+        password: '密码'
         blocked: '是否封禁'
       weixin_user:
         open_id: '微信ID'
@@ -267,6 +269,12 @@
         target: '目标订单'
         target_type: '消费路径'
         pay_time: '下单时间'
+        created_at: "创建时间"
+        coupon_status: '状态'
+      invite_award:
+        direct_award: '直接邀请奖励'
+        indirect_award: '间接邀请奖励'
+        published: '是否发布'
         created_at: "创建时间"
       format: "%{attribute}%{message}"
       messages:

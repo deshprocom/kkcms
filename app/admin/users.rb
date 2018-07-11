@@ -1,9 +1,9 @@
 ActiveAdmin.register User do
   menu priority: 1, parent: '用户管理', label: 'app用户'
 
-  actions :all, except: [:new, :destroy, :edit]
+  actions :all, except: [:destroy, :edit]
 
-  permit_params :mark
+  permit_params :mark, :nick_name, :email, :password
 
   filter :user_name
   filter :nick_name
@@ -22,9 +22,29 @@ ActiveAdmin.register User do
     end
   end
 
+  form partial: 'form'
+
   controller do
     def scoped_collection
       User.includes(:counter)
+    end
+
+    def create
+      email = user_params[:email]
+      password = user_params[:password]
+      if !UserValidator.email_valid?(email) || password.blank? || UserValidator.email_exists?(email)
+        return redirect_back fallback_location: admin_users_url, notice: '用户创建失败，请检查邮箱是否重复，格式是否正确!'
+      end
+      password_md5 = ::Digest::MD5.hexdigest(password)
+      user = User.create_by_email(email, password_md5)
+      UserRelation.create({ user: user, level: 0 })
+      user.update(new_user: false)
+      redirect_back fallback_location: admin_users_url, notice: '用户创建成功'
+    end
+
+    def user_params
+      params.require(:user).permit(:email,
+                                   :password)
     end
   end
 
@@ -56,7 +76,16 @@ ActiveAdmin.register User do
     render 'update_success'
   end
 
+  collection_action :search_mobile_user, method: [:get] do
+    @user = User.by_mobile(params[:mobile])
+    render 'user_info'
+  end
+
   collection_action :search_user_modal, method: :get do
     render 'search_user_modal'
+  end
+
+  action_item :invite_awards, only: :index do
+    link_to '分销奖励', admin_invite_awards_path
   end
 end
