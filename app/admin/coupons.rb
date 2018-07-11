@@ -9,4 +9,16 @@ ActiveAdmin.register Coupon do
   index do
     render 'index', context: self
   end
+
+  member_action :award, method: [:get, :post] do
+    return render :award unless request.post?
+    user = User.by_mobile(params[:mobile])
+    if user&.mobile.present?
+      resource.received_by_user(user)
+      resource.update(mark: "由用户#{current_admin_user&.email}发放")
+      redirect_back fallback_location: admin_coupons_url, notice: '发放成功'
+    else
+      redirect_back fallback_location: admin_coupons_url, notice: '发放失败'
+    end
+  end
 end
