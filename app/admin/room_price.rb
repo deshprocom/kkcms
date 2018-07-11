@@ -13,7 +13,7 @@ ActiveAdmin.register HotelRoomPrice, as: 'RoomPrice' do
     end
 
     def create
-      @room_price = @room.prices.build(permitted_params[:hotel_room_price])
+      @room_price = @room.prices.build(permitted_params[:hotel_room_price].merge(hotel_id: @room.hotel_id))
       flash[:notice] = '增加特定价格成功' if @room_price.save
       render 'response'
     end
