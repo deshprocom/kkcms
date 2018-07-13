@@ -1,0 +1,17 @@
+%div
+  %table.index_table
+    %thead
+      %tr
+        %th 头像
+        %th 昵称
+        %th 手机号
+        %th 注册时间
+    %tbody
+      - @relation_users.includes(:user).each do |item|
+        %tr
+          %td= avatar_profile(item.user, size: 60)
+          %td= item.user.nick_name
+          %td= item.user.mobile
+          %td= item.created_at
+  %div.index_foot
+    = paginate(@relation_users, remote: true)

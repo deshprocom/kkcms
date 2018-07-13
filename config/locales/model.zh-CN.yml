@@ -145,6 +145,7 @@
         continuous_login_days: '连续登录天数'
         share_count: '分享次数'
         total_pocket_money: '余额'
+        invite_count: '邀请人数'
         password: '密码'
         blocked: '是否封禁'
       weixin_user:
