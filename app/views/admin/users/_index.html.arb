@@ -12,9 +12,6 @@ context.instance_eval do
   column(:login_days, sortable: 'user_counters.login_days') do |user|
     user.counter.login_days
   end
-  column(:continuous_login_days, sortable: 'user_counters.continuous_login_days') do |user|
-    user.counter.continuous_login_days
-  end
   column(:share_count, sortable: 'user_counters.share_count') do |user|
     user.counter.share_count
   end
