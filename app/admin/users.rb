@@ -66,6 +66,11 @@ ActiveAdmin.register User do
     render 'update_success'
   end
 
+  member_action :invites, method: :get do
+    @page_title = "邀请列表(直接邀请#{resource.counter.direct_invite_count}, 间接邀请#{resource.counter.indirect_invite_count})"
+    @relation_users = UserRelation.where("pid = ? or gid = ?", resource.id, resource.id).order(created_at: :desc).page(params[:page])
+  end
+
   member_action :unblock, method: [:post] do
     resource.update(blocked: false, blocked_at: Time.zone.now)
     render 'update_success'

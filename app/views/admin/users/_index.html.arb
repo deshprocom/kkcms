@@ -9,7 +9,6 @@ context.instance_eval do
   column(:email, sortable: false)
   column(:signature, sortable: false)
   column(:last_visit)
-  column(:reg_date)
   column(:login_days, sortable: 'user_counters.login_days') do |user|
     user.counter.login_days
   end
@@ -19,13 +18,17 @@ context.instance_eval do
   column(:share_count, sortable: 'user_counters.share_count') do |user|
     user.counter.share_count
   end
+  column(:invite_count, sortable: 'user_counters.direct_invite_count') do |user|
+    link_to user.counter.direct_invite_count + user.counter.indirect_invite_count, invites_admin_user_path(user)
+  end
   column(:points, sortable: 'user_counters.points') do |user|
     link_to user.counter.points, admin_integrals_path(q: { user_id_eq: user.id })
   end
   column(:total_pocket_money, sortable: 'user_counters.total_pocket_money') do |user|
-    user.counter.total_pocket_money
+    link_to user.counter.total_pocket_money, admin_pocket_moneys_path(q: { user_id_eq: user.id })
   end
   column(:mark, sortable: false) { |i| best_in_place i, :mark, as: :input, url: [:admin, i] }
+  column(:reg_date)
   column(:blocked, sortable: false)
   actions name: '操作'
 end
