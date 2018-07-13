@@ -5,4 +5,7 @@
     = f.inputs do
       = f.input :price
       = f.input :date
+      = f.input :dates, as: :text,
+                        hint: '多个日期以英文逗号分割。如果此项输入了多个日期，单个日期的参数则无效',
+                        input_html: { rows: 5 }
     = f.actions
