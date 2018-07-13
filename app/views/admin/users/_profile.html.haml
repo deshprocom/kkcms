@@ -11,6 +11,11 @@
           %span ID:
           %span= resource.user_name
         %div
+          %span 积分:
+          %span= resource.counter.points
+          %span{ style: 'margin-left: 8px;' } 余额:
+          %span= resource.counter.total_pocket_money
+        %div
           %span 备注:
           %span= best_in_place resource, :mark, as: :input, url: [:admin, resource]
     %div.account
