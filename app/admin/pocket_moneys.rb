@@ -6,6 +6,7 @@ ActiveAdmin.register PocketMoney do
 
   filter :user_nick_name, as: :string
   filter :user_mobile, as: :string
+  filter :option_type, as: :select
 
   index do
     render 'index', context: self
