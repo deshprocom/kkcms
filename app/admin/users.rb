@@ -38,7 +38,7 @@ ActiveAdmin.register User do
       end
       password_md5 = ::Digest::MD5.hexdigest(password)
       user = User.create_by_email(email, password_md5)
-      UserRelation.create({ user: user, level: 0 })
+      UserRelation.create({ user: user, level: 0, new_user: false })
       user.update(new_user: false)
       redirect_back fallback_location: admin_users_url, notice: '用户创建成功'
     end
