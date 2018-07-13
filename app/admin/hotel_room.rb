@@ -4,7 +4,7 @@ ActiveAdmin.register HotelRoom do
 
   belongs_to :hotel
 
-  permit_params :title, :hotel_id, :text_tags, :text_notes, :published
+  permit_params :title, :hotel_id, :text_tags, :text_notes, :published, :room_num_limit
 
   form partial: 'form'
 
@@ -40,7 +40,9 @@ ActiveAdmin.register HotelRoom do
 
     def update_wday_prices
       week_prices_params.each do |wday, price|
-        @hotel_room.wday_prices.create(wday: wday, price: price, hotel_id: @hotel.id)
+        @hotel_room.wday_prices.create(wday: wday, price: price,
+                                       hotel_id: @hotel.id,
+                                       room_num_limit: @hotel_room.room_num_limit)
       end
     end
 
