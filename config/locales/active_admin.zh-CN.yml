@@ -91,6 +91,13 @@
     reduce: '立减'
     full_reduce: '满减'
     rebate: '折扣'
+  withdraw_status:
+    success: '提现成功'
+    failed : '提现失败'
+    pending: '提现申请中'
+  withdraw_type:
+    alipay: '支付宝'
+    bank: '银行卡'
   time:
     formats:
       long: "%Y-%m-%d %H:%M:%S"
