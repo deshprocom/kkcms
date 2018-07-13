@@ -10,4 +10,8 @@ module AdminTrans
   COUPON_TYPE = CouponTemp.coupon_types.keys.collect { |d| [I18n.t("coupon_type.#{d}"), d] }
 
   DISCOUNT_TYPE = CouponTemp.discount_types.keys.collect { |d| [I18n.t("discount_type.#{d}"), d] }
+
+  WITHDRAWAL_ACCOUNT_TYPE = %w[alipay bank].collect { |d| [I18n.t("withdraw_type.#{d}"), d] }
+
+  WITHDRAWAL_OPTION_STATUS = %w[pending success failed].collect { |d| [I18n.t("withdraw_status.#{d}"), d] }
 end
