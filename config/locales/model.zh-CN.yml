@@ -28,6 +28,8 @@
       coupon_temp: '优惠券模版'
       coupon: '优惠券'
       invite_award: '分销奖励'
+      pocket_money: '零钱明细'
+      withdrawal: '提款单'
     attributes:
       admin_user:
         email: "邮箱"
@@ -139,6 +141,10 @@
         followers_count: '粉丝'
         following_count: '关注'
         points: '积分'
+        login_days: '登录天数'
+        continuous_login_days: '连续登录天数'
+        share_count: '分享次数'
+        total_pocket_money: '余额'
         password: '密码'
         blocked: '是否封禁'
       weixin_user:
@@ -277,6 +283,29 @@
         indirect_award: '间接邀请奖励'
         published: '是否发布'
         created_at: "创建时间"
+      pocket_money:
+        user: '用户'
+        nick_name: '昵称'
+        user_nick_name: '昵称'
+        user_mobile: '手机号'
+        option_type: '类型'
+        memo: '备忘'
+        amount: '奖励金'
+        created_at: '创建时间'
+      withdrawal:
+        user: '用户'
+        real_name: '真实姓名'
+        account: '账户ID'
+        account_type: '账户类型'
+        account_memo: '开户行'
+        mobile: '手机号'
+        user_mobile: '手机号'
+        user_nick_name: '昵称'
+        amount: '申请金额'
+        option_status: '进度'
+        option_Time: '操作时间'
+        memo: '备忘'
+        created_at: '创建时间'
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'

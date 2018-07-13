@@ -4,6 +4,7 @@ ActiveAdmin.register User do
   actions :all, except: [:destroy, :edit]
 
   permit_params :mark, :nick_name, :email, :password
+  config.sort_order = 'last_visit_desc'
 
   filter :user_name
   filter :nick_name
