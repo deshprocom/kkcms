@@ -81,6 +81,7 @@
         text_tags: "房间标签"
         text_notes: "房间提示"
         published: "是否上架"
+        room_num_limit: "房间数量"
       hotel_refund:
         user: '用户'
         order: '订单'
@@ -92,6 +93,8 @@
         price: "价格"
         date: "单个日期"
         dates: "多个日期"
+        room_num_limit: "房间数量"
+        room_sales: "已卖数量"
       info:
         title: "标题"
         info_type: "类型"

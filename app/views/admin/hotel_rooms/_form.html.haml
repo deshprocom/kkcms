@@ -6,6 +6,7 @@
     = f.input :title
     = f.input :text_tags, hint: '每个标签以逗号分开。例： WIFI, 双床'
     = f.input :text_notes, hint: '每个提示以逗号分开。例： 含早餐, 可住两人'
+    = f.input :room_num_limit
     = f.semantic_fields_for :week_prices do |form|
       - HotelRoomPrice::WDAYS.each do |wday|
         = form.input wday,

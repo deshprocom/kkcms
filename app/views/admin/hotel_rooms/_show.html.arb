@@ -8,6 +8,7 @@ context.instance_eval do
     HotelRoomPrice::WDAYS.each do |wday|
       row(I18n.t "helpers.label.week_prices.#{wday}" ) { |room| room.send("#{wday}_price")&.price }
     end
+    row(:room_num_limit)
   end
   columns do
     column do
@@ -23,6 +24,8 @@ context.instance_eval do
         table_for resource.prices.where('date >= ?', Date.current) do
           column(:date)
           column(:price)
+          column(:room_num_limit)
+          column(:room_sales)
           column('操作') do |price|
             span link_to('编辑', edit_admin_hotel_room_room_price_url(resource, price), remote: true)
             span '|'
