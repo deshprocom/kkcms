@@ -16,16 +16,24 @@ ActiveAdmin.register Withdrawal do
   end
 
   batch_action :'批量提现通过', confirm: '确定操作吗?' do |ids|
+    error_ids = []
+    Rails.logger.info "batch_action success-> #{current_admin_user&.email}操作的id: #{ids}"
     Withdrawal.find(ids).each do |item|
+      error_ids << item.id unless item.option_status.eql?('pending')
       item.admin_change_status('success', current_admin_user&.email)
     end
-    redirect_back fallback_location: admin_withdrawals_url, notice: '批量提现通过成功！'
+    Rails.logger.info "batch_action success-> 失败的id: #{error_ids}"
+    redirect_back fallback_location: admin_withdrawals_url, notice: "操作成功！状态修改失败ids: #{error_ids}"
   end
 
   batch_action :'批量提现失败', confirm: '确定操作吗?' do |ids|
+    error_ids = []
+    Rails.logger.info "batch_action success-> #{current_admin_user&.email}操作的id: #{ids}"
     Withdrawal.find(ids).each do |item|
+      error_ids << item.id unless item.option_status.eql?('pending')
       item.admin_change_status('failed', current_admin_user&.email)
     end
-    redirect_back fallback_location: admin_users_url, notice: '批量提现失败成功！'
+    Rails.logger.info "batch_action success-> 失败的id: #{error_ids}"
+    redirect_back fallback_location: admin_users_url, notice: "操作成功！状态修改失败ids: #{error_ids}"
   end
 end
