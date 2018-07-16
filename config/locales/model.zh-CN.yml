@@ -81,6 +81,7 @@
         text_tags: "房间标签"
         text_notes: "房间提示"
         published: "是否上架"
+        room_num_limit: "房间数量"
       hotel_refund:
         user: '用户'
         order: '订单'
@@ -92,6 +93,8 @@
         price: "价格"
         date: "单个日期"
         dates: "多个日期"
+        room_num_limit: "房间数量"
+        room_sales: "已卖数量"
       info:
         title: "标题"
         info_type: "类型"
@@ -135,7 +138,7 @@
         mobile: '手机号'
         email: '邮箱'
         signature: '签名'
-        last_visit: '上次登录时间'
+        last_visit: '上次登录'
         reg_date: '注册日期'
         mark: '备注'
         followers_count: '粉丝'
@@ -265,6 +268,8 @@
         discount: '折扣'
         integral_on: '开启积分兑换'
         integrals: '积分'
+        coupons_count: '总数'
+        coupon_received_count: '领取数'
         published: '是否发布'
         created_at: '创建时间'
         updated_at: '修改时间'

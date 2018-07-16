@@ -5,11 +5,11 @@
         %span= avatar(resource.avatar_path, size: 70)
       %div.right
         %div
-          %span 昵称：
+          %span 用户昵称：
           %span= resource.nick_name
         %div
-          %span ID:
-          %span= resource.user_name
+          %span 活跃天数：
+          %span= "#{resource.counter.login_days}天"
         %div
           %span 积分:
           %span= resource.counter.points
