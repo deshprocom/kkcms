@@ -39,7 +39,8 @@ module Shop
     end
 
     collection_action :quick_create, method: :post do
-      @category = Category.new(permitted_params[:shop_category])
+      position = Category.position_desc.first&.position.to_i + 100000
+      @category = Category.new(permitted_params[:shop_category].merge(position: position))
       @category.save
       render 'quick_response', layout: false
     end
@@ -50,6 +51,20 @@ module Shop
         format.js { render 'children', layout: false }
         format.json { render json: @category.children }
       end
+    end
+
+    member_action :reposition, method: :post do
+      category = Category.find(params[:id])
+      next_category = params[:next_id] && Category.find(params[:next_id].split('_').last)
+      prev_category = params[:prev_id] && Category.find(params[:prev_id].split('_').last)
+      position = if params[:prev_id].blank?
+                   next_category.position + 100000
+                 elsif params[:next_id].blank?
+                   prev_category.position / 2
+                 else
+                   (prev_category.position + next_category.position) / 2
+                 end
+      category.update(position: position)
     end
 
     controller do
