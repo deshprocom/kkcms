@@ -14,7 +14,7 @@ module Services
 
     def need_update?(toggle)
       period = Time.zone.now - toggle.last_time
-      period > toggle.current_rule.interval * 60
+      period > toggle.current_rule.interval * 60 && toggle.created_at > 30.days.ago
     end
 
     def update_counters(toggle)
