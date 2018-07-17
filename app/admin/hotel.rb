@@ -1,11 +1,10 @@
 ActiveAdmin.register Hotel do
-  config.sort_order = 'position_desc'
-
   menu parent: '酒店管理', label: '酒店列表'
 
   filter :id
   filter :title
   filter :location
+  filter :published
   filter :region, as: :select, collection: Hotel::REGIONS_MAP.invert
 
   index do
@@ -72,6 +71,10 @@ ActiveAdmin.register Hotel do
 
     def set_position
       params[:hotel][:position] = Hotel.position_desc.first&.position.to_i + 100000
+    end
+
+    def apply_sorting(chain)
+      params[:order] ? chain : chain.reorder(published: :desc, position: :desc)
     end
   end
 
