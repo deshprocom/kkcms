@@ -8,7 +8,7 @@ ActiveAdmin.register HotelRoomPrice, as: 'RoomPrice' do
   end
 
   belongs_to :hotel_room
-  permit_params :date, :price, :dates
+  permit_params :date, :price, :dates, :room_num_limit
   controller do
     before_action :set_room
     before_action :set_price, only: [:edit, :update, :destroy]
