@@ -11,7 +11,9 @@ ActiveAdmin.register SmsLog do
   index do
     id_column
     column :mobile
-    column :content
+    column :content do |i|
+      i.content.gsub(/\d{6}/, '******')
+    end
     column :error_msg
     column :fee
     column :send_time
