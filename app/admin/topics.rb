@@ -38,7 +38,7 @@ ActiveAdmin.register Topic do
 
   member_action :likes, method: :get do
     @page_title = "点赞列表 (#{resource.likes_count})"
-    @like_by_users = resource.like_by_users.page(params[:page]).per(10)
+    @like_by_users = resource.like_by_users.page(params[:page])
   end
 
   member_action :views, method: [:get, :post] do

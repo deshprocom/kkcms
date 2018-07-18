@@ -10,7 +10,11 @@ context.instance_eval do
   column(:signature, sortable: false)
   column(:last_visit)
   column(:login_days, sortable: 'user_counters.login_days') do |user|
-    user.counter.login_days
+    if ENV['CURRENT_PROJECT_ENV'].eql?('test')
+      best_in_place user.counter, :login_days, as: :input, url: [:admin, user.counter]
+    else
+      user.counter.login_days
+    end
   end
   column(:share_count, sortable: 'user_counters.share_count') do |user|
     user.counter.share_count
