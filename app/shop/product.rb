@@ -1,7 +1,7 @@
 module Shop
   ActiveAdmin.register Product, as: 'Product', namespace: :shop do
     config.batch_actions = false
-    config.sort_order = 'published_desc'
+    config.sort_order = 'position_desc'
     menu priority: 2
 
     filter :title
@@ -26,7 +26,8 @@ module Shop
 
     controller do
       def create
-        @product = Product.new(permitted_params[:shop_product])
+        position = Product.position_desc.first&.position.to_i + 100000
+        @product = Product.new(permitted_params[:shop_product].merge(position: position))
         if @product.save
           flash[:notice] = '新建商品详情成功'
           redirect_to edit_shop_product_path(@product)
@@ -75,6 +76,20 @@ module Shop
     member_action :unrecommend, method: :post do
       Product.find(params[:id]).unrecommend!
       redirect_back fallback_location: shop_products_url, notice: '已取消推荐商品'
+    end
+
+    member_action :reposition, method: :post do
+      product = Product.find(params[:id])
+      next_product = params[:next_id] && Product.find(params[:next_id].split('_').last)
+      prev_product = params[:prev_id] && Product.find(params[:prev_id].split('_').last)
+      position = if params[:prev_id].blank?
+                   next_product.position + 100000
+                 elsif params[:next_id].blank?
+                   prev_product.position / 2
+                 else
+                   (prev_product.position + next_product.position) / 2
+                 end
+      product.update(position: position)
     end
   end
 end

@@ -58,7 +58,7 @@ ActiveAdmin.register HotelRoom do
 
     def check_week_prices_params
       week_prices_params.as_json.each_value do |price|
-        if price.to_i <= 0
+        if price.to_f <= 0
           flash.now[:error] = '一周七天的价格不能为0元或空'
           return render :new
         end
