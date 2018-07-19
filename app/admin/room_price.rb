@@ -29,7 +29,7 @@ ActiveAdmin.register HotelRoomPrice, as: 'RoomPrice' do
     def create_for_dates
       failed_dates = []
       price_params[:dates].split(/,|，/).each do |date|
-        price = @room.prices.create(hotel_id: @room.hotel_id, date: date, price: price_params[:price])
+        price = @room.prices.create(hotel_id: @room.hotel_id, date: date, price: price_params[:price], room_num_limit: price_params[:room_num_limit])
         next if price.errors.blank?
         failed_dates << date
       end
