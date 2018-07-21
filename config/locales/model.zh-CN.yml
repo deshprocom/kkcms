@@ -31,6 +31,7 @@
       invite_award: '分销奖励'
       pocket_money: '零钱明细'
       withdrawal: '提款单'
+      feedback: '意见反馈'
     attributes:
       app_version:
         version: "版本号"
@@ -319,6 +320,11 @@
         option_status: '进度'
         option_Time: '操作时间'
         memo: '备忘'
+        created_at: '创建时间'
+      feedback:
+        content: '反馈内容'
+        contact: '联系方式'
+        dealt: '已处理'
         created_at: '创建时间'
       format: "%{attribute}%{message}"
       messages:
