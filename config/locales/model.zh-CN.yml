@@ -1,6 +1,7 @@
 "zh-CN":
   activerecord:
     models:
+      app_version: "app版本管理"
       admin_user: "管理员"
       hotel: "酒店"
       hotel_room: "酒店房间"
@@ -31,6 +32,13 @@
       pocket_money: '零钱明细'
       withdrawal: '提款单'
     attributes:
+      app_version:
+        version: "版本号"
+        platform: "app平台"
+        force_upgrade: "强制升级"
+        content: "更新内容"
+        title: "更新标题"
+        download_url: "下载链接"
       admin_user:
         email: "邮箱"
         sign_in_count: "登陆次数"
