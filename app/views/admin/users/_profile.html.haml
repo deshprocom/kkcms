@@ -18,6 +18,7 @@
         %div
           %span 备注:
           %span= best_in_place resource, :mark, as: :input, url: [:admin, resource]
+          %span | #{resource.r_level}级用户
     %div.account
       %div
         %span 于#{resource.reg_date&.strftime('%Y-%m-%d')}注册
