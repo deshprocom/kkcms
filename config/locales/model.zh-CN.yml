@@ -160,6 +160,8 @@
         invite_count: '邀请人数'
         password: '密码'
         blocked: '是否封禁'
+        level_special: '等级标记'
+        r_level: '级别'
       weixin_user:
         open_id: '微信ID'
         head_img: '微信头像'
