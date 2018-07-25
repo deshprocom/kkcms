@@ -10,6 +10,15 @@ ActiveAdmin.register Coupon do
     render 'index', context: self
   end
 
+  batch_action :'批量删除', confirm: '确定操作吗?' do |ids|
+    Coupon.find(ids).each do |item|
+      item.destroy if item.receive_time.blank?
+    end
+    redirect_back fallback_location: admin_coupons_url, notice: "操作成功！"
+  end
+
+  batch_action :destroy, false
+
   member_action :award, method: [:get, :post] do
     return render :award unless request.post?
     user = User.by_mobile(params[:mobile])
