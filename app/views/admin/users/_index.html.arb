@@ -8,9 +8,6 @@ context.instance_eval do
   column(:email, sortable: false)
   column(:signature, sortable: false)
   column(:last_visit)
-  column(:login_count, sortable: 'user_counters.login_count') do |user|
-    user.counter.login_count
-  end
   column(:login_days, sortable: 'user_counters.login_days') do |user|
     if ENV['CURRENT_PROJECT_ENV'].eql?('test')
       best_in_place user.counter, :login_days, as: :input, url: [:admin, user.counter]
