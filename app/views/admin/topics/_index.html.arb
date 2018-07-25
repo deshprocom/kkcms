@@ -18,7 +18,9 @@ context.instance_eval do
   column :likes_count do |topic|
     link_to topic.likes_count, likes_admin_topic_path(topic)
   end
-  column :total_comments, &:total_comments
+  column :total_comments, sortable: false do |topic|
+    link_to topic.total_comments, admin_comments_path(q: { target_id_eq: topic.id })
+  end
   column :page_views, sortable: 'topic_counters.page_views' do |topic|
     topic.topic_counter.page_views
   end
