@@ -6,12 +6,11 @@ ActiveAdmin.register User do
   permit_params :mark, :nick_name, :email, :password, :level_special
   config.sort_order = 'last_visit_desc'
 
-  filter :user_name
+  filter :user_uuid
   filter :nick_name
   filter :mobile
   filter :email
   filter :reg_date
-  filter :last_visit
 
   index do
     render 'index', context: self

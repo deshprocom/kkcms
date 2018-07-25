@@ -142,6 +142,7 @@
         source_image: '来源图片'
       user:
         user_name: '用户名'
+        user_uuid: 'UUID'
         nick_name: '昵称'
         avatar: '头像'
         mobile: '手机号'
@@ -161,6 +162,7 @@
         password: '密码'
         blocked: '是否封禁'
         level_special: '等级标记'
+        login_count: '打开次数'
         r_level: '级别'
       weixin_user:
         open_id: '微信ID'

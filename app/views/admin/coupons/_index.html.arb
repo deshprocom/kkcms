@@ -1,8 +1,10 @@
 context.instance_eval do
+  selectable_column
   column :id
   column :coupon_number, sortable: false
   column :coupon_temp, sortable: false do |t|
-    I18n.t("coupon_type.#{t.coupon_temp.coupon_type}")
+    str_name = t.coupon_temp.name
+    t.coupon_temp.new_user.yield_self { |it| it ? "新用户 | #{str_name}" : str_name }
   end
   column :receive_time
   column :expire_time
