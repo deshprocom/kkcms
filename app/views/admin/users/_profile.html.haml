@@ -1,3 +1,4 @@
+- level_str = resource.r_level.zero? ? "--用户" : "#{resource.r_level}级用户"
 %div.profile_container
   %div.header
     %div.user_info
@@ -18,7 +19,7 @@
         %div
           %span 备注:
           %span= best_in_place resource, :mark, as: :input, url: [:admin, resource]
-          %span | #{resource.r_level}级用户
+          %span | #{level_str}
     %div.account
       %div
         %span 于#{resource.reg_date&.strftime('%Y-%m-%d')}注册
