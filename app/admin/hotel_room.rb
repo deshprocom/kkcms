@@ -30,7 +30,7 @@ ActiveAdmin.register HotelRoom do
       if @hotel_room.update(permitted_params[:hotel_room])
         HotelRoomPrice.where(hotel_room_id: @hotel_room.id, is_master: true).delete_all
         update_wday_prices
-        update_min_wday_prices if @hotel_room.published
+        update_min_wday_prices
         redirect_to resource_path(@hotel_room)
       else
         flash[:error] = '更新失败'
