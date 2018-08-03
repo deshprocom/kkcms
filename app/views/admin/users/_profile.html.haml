@@ -20,6 +20,7 @@
           %span 备注:
           %span= best_in_place resource, :mark, as: :input, url: [:admin, resource]
           %span | #{level_str}
+          %span= resource.p_user.blank? ? '' : "| 邀请人: #{resource.p_user.nick_name}_#{resource.p_user.mobile}"
     %div.account
       %div
         %span 于#{resource.reg_date&.strftime('%Y-%m-%d')}注册
