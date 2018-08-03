@@ -71,8 +71,8 @@ ActiveAdmin.register User do
   end
 
   member_action :invites, method: :get do
-    @page_title = "邀请列表(邀请数: #{resource.counter.invite_users}, 成功邀请#{resource.counter.direct_invite_count}, 下级成功邀请#{resource.counter.indirect_invite_count})"
     @relation_users = UserRelation.where("pid = ? or gid = ?", resource.id, resource.id).order(created_at: :desc).page(params[:page])
+    @page_title = "邀请列表(邀请总数: #{@relation_users.count}, 个人邀请数: #{resource.counter.invite_users}, 成功总数#{resource.counter.direct_invite_count}, 下级成功总数#{resource.counter.indirect_invite_count})"
   end
 
   member_action :unblock, method: [:post] do
