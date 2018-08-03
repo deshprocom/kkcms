@@ -19,6 +19,11 @@ ActiveAdmin.register User do
   sidebar :'数量统计', only: :index do
     ul do
       li "用户总数：#{User.count}个"
+      li "1级用户总数: #{UserRelation.where(level: 1).count}"
+      li "2级用户总数: #{UserRelation.where(level: 2).count}"
+      li "3级用户总数: #{UserRelation.where(level: 3).count}"
+      li "直接邀请成功数: #{UserCounter.sum(:direct_invite_count)}"
+      li "间接邀请成功数: #{UserCounter.sum(:indirect_invite_count)}"
     end
   end
 
