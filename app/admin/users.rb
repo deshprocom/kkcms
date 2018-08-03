@@ -19,6 +19,11 @@ ActiveAdmin.register User do
   sidebar :'数量统计', only: :index do
     ul do
       li "用户总数：#{User.count}个"
+      li "1级用户总数: #{UserRelation.where(level: 1).count}"
+      li "2级用户总数: #{UserRelation.where(level: 2).count}"
+      li "3级用户总数: #{UserRelation.where(level: 3).count}"
+      li "直接邀请成功数: #{UserCounter.sum(:direct_invite_count)}"
+      li "间接邀请成功数: #{UserCounter.sum(:indirect_invite_count)}"
     end
   end
 
@@ -66,8 +71,8 @@ ActiveAdmin.register User do
   end
 
   member_action :invites, method: :get do
-    @page_title = "邀请列表(直接邀请#{resource.counter.direct_invite_count}, 间接邀请#{resource.counter.indirect_invite_count})"
     @relation_users = UserRelation.where("pid = ? or gid = ?", resource.id, resource.id).order(created_at: :desc).page(params[:page])
+    @page_title = "邀请列表(邀请总数: #{@relation_users.count}, 个人邀请数: #{resource.counter.invite_users}, 成功总数#{resource.counter.direct_invite_count}, 下级成功总数#{resource.counter.indirect_invite_count})"
   end
 
   member_action :unblock, method: [:post] do
