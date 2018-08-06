@@ -81,6 +81,7 @@
   coupon_type:
     hotel: '酒店'
     shop: '商城'
+    offline_store: '线下店铺'
     new_user: '新用户'
   coupon_status:
     init: '未领取'

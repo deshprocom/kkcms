@@ -3,6 +3,8 @@
   = f.inputs do
     = f.input :info_type
     = f.input :title
+    = f.input :audio_link
+    = f.input :coupon_ids, hint: '每个优惠券id以逗号分开。例： 22,33'
     = f.input :date
     = f.input :image, as: :attachment, required: true,
                      hint: '图片最大为 2MB',

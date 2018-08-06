@@ -3,6 +3,14 @@ context.instance_eval do
     row(:info_type)
     row(:logo) { |info| image_tag(info.preview_image, height: 150) }
     row(:title)
+    row(:audio_link) do |info|
+      info.audio_link && audio_tag(info.audio_link, controls: true)
+    end
+    row(:coupon_ids) do |info|
+      info.coupons.map do |coupon|
+        link_to coupon.name, admin_coupon_temp_url(coupon)
+      end.join(' | ').html_safe
+    end
     row(:date)
     row(:published)
     row(:stickied)
