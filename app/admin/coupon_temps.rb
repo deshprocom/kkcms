@@ -1,7 +1,8 @@
 ActiveAdmin.register CouponTemp do
   menu priority: 3, parent: '优惠券', label: '模版'
-  permit_params :coupon_type, :name, :cover_link, :short_desc, :published, :discount_type, :new_user, :limit_price, :reduce_price, :discount, :integral_on, :integrals, :expire_day
-  actions :all, except: [:show]
+  permit_params :coupon_type, :name, :cover_link, :short_desc, :published, :discount_type,
+                :new_user, :limit_price, :reduce_price, :discount, :integral_on, :integrals,
+                :expire_day, :address, :telephone
 
   filter :new_user
   filter :integral_on

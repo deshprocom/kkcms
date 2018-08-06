@@ -115,6 +115,8 @@
         created_at: "创建时间"
         updated_at: "修改时间"
         doc: "导入文档"
+        coupon_ids: "可领的优惠券"
+        audio_link: "音频链接"
       info_type:
         name: "类型名称"
         published: "是否发布"
@@ -284,6 +286,8 @@
         integrals: '积分'
         coupons_count: '总数'
         coupon_received_count: '领取数'
+        address: '地址'
+        telephone: '联系方式'
         published: '是否发布'
         created_at: '创建时间'
         updated_at: '修改时间'
