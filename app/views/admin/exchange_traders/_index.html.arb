@@ -7,6 +7,6 @@ context.instance_eval do
   column('手机号') { |trader| trader.user.mobile }
   column('邮箱') { |trader| trader.user.email }
   column(:memo, sortable: false)
-  column(:position)
+  column(:score)
   actions name: '操作'
 end

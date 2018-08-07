@@ -12,6 +12,9 @@
       canceled: '已取消'
       returning: '退货中'
       returned: '已退货'
+      ex_rate: '汇率达人'
+      integral: '积分达人'
+      dating: '交友达人'
 
   publish: "发布"
   unpublish: "取消发布"
@@ -92,6 +95,10 @@
     reduce: '立减'
     full_reduce: '满减'
     rebate: '折扣'
+  trader_type:
+    ex_rate: '汇率达人'
+    integral: '积分达人'
+    dating: '交友达人'
   withdraw_status:
     success: '提现成功'
     failed : '提现失败'
