@@ -127,6 +127,8 @@
         memo: '备注'
         position: '排序'
         user: '用户'
+        score: '分数'
+        trader_type: '交易人类型'
       exchange_rate:
         s_currency: '当前币种'
         s_currency_no: '当前币种编号'

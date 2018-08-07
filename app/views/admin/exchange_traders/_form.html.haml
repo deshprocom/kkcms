@@ -9,7 +9,8 @@
       =link_to '搜索用户', search_user_modal_admin_users_path, remote: true
       - resource.errors[:user_id].each do |err|
         %p.inline-errors=err
-    = f.input :position
+    = f.input :trader_type, collection: AdminTrans::TRADER_TYPES, prompt: true
+    = f.input :score, hint: '代表积分达人的积分 或 交友达人的点赞数 或 汇率达人的排序'
     = f.input :memo
   = f.actions
 
