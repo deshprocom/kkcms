@@ -7,7 +7,7 @@ ActiveAdmin.register Info do
   filter :published
   filter :stickied
 
-  permit_params :title, :date, :image, :published, :description, :info_type_id
+  permit_params :title, :date, :image, :published, :description, :info_type_id, :coupon_ids, :audio_link
   form partial: 'form'
 
   show do
@@ -21,11 +21,18 @@ ActiveAdmin.register Info do
   controller do
     before_action :unpublished?, only: [:destroy]
     before_action :process_doc, only: [:create, :update]
+    before_action :process_coupon_ids, only: [:create, :update]
 
     def process_doc
       return if params[:doc].blank?
 
       params[:info][:description] = DocProcessor.to_html(params[:doc].path)
+    end
+
+    def process_coupon_ids
+      coupon_ids = params[:info][:coupon_ids].split(/,\s*|，\s*/)
+      return if coupon_ids.blank?
+      params[:info][:coupon_ids] = coupon_ids.join(',')
     end
 
     def unpublished?

@@ -3,6 +3,7 @@
     models:
       app_version: "app版本管理"
       admin_user: "管理员"
+      hotline: "热线电话"
       hotel: "酒店"
       hotel_room: "酒店房间"
       hotel_room_price: "房间价格"
@@ -115,6 +116,8 @@
         created_at: "创建时间"
         updated_at: "修改时间"
         doc: "导入文档"
+        coupon_ids: "可领的优惠券"
+        audio_link: "音频链接"
       info_type:
         name: "类型名称"
         published: "是否发布"
@@ -125,6 +128,8 @@
         memo: '备注'
         position: '排序'
         user: '用户'
+        score: '分数'
+        trader_type: '交易人类型'
       exchange_rate:
         s_currency: '当前币种'
         s_currency_no: '当前币种编号'
@@ -284,6 +289,8 @@
         integrals: '积分'
         coupons_count: '总数'
         coupon_received_count: '领取数'
+        address: '地址'
+        telephone: '联系方式'
         published: '是否发布'
         created_at: '创建时间'
         updated_at: '修改时间'
@@ -331,6 +338,11 @@
         contact: '联系方式'
         dealt: '已处理'
         created_at: '创建时间'
+      hotline:
+        position: '排序'
+        title: '标题'
+        telephone: '联系方式'
+        line_type: '热线类型'
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'
