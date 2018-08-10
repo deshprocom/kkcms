@@ -3,6 +3,7 @@
     models:
       app_version: "app版本管理"
       admin_user: "管理员"
+      hotline: "热线电话"
       hotel: "酒店"
       hotel_room: "酒店房间"
       hotel_room_price: "房间价格"
@@ -337,6 +338,11 @@
         contact: '联系方式'
         dealt: '已处理'
         created_at: '创建时间'
+      hotline:
+        position: '排序'
+        title: '标题'
+        telephone: '联系方式'
+        line_type: '热线类型'
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'

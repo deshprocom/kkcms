@@ -13,6 +13,8 @@ module AdminTrans
 
   TRADER_TYPES = ExchangeTrader.trader_types.keys.collect { |d| [I18n.t("trader_type.#{d}"), d] }
 
+  HOTLINE_TYPES = Hotline.line_types.keys.collect { |d| [I18n.t("hotline_type.#{d}"), d] }
+
   WITHDRAWAL_ACCOUNT_TYPE = %w[alipay bank].collect { |d| [I18n.t("withdraw_type.#{d}"), d] }
 
   WITHDRAWAL_OPTION_STATUS = %w[pending success failed].collect { |d| [I18n.t("withdraw_status.#{d}"), d] } end
