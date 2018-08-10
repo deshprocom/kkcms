@@ -15,6 +15,8 @@
       ex_rate: '汇率达人'
       integral: '积分达人'
       dating: '交友达人'
+      fast_food: '快餐热线'
+      public_service: '便民热线'
 
   publish: "发布"
   unpublish: "取消发布"
@@ -106,6 +108,9 @@
   withdraw_type:
     alipay: '支付宝'
     bank: '银行卡'
+  hotline_type:
+    fast_food: '快餐热线'
+    public_service: '便民热线'
   time:
     formats:
       long: "%Y-%m-%d %H:%M:%S"
