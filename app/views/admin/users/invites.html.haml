@@ -18,4 +18,4 @@
           %td= item.p_user&.user.eql?(resource) ? '直接邀请' : '间接邀请'
           %td= item.created_at
   %div.index_foot
-    = paginate(@relation_users, remote: true)
+    = paginate(@relation_users)
