@@ -10,4 +10,4 @@
           %td= avatar_profile(user, size: 60)
           %td= user.nick_name
   %div.index_foot
-    = paginate(@followings, remote: true)
+    = paginate(@followings)
