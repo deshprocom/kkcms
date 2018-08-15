@@ -33,6 +33,7 @@
       pocket_money: '零钱明细'
       withdrawal: '提款单'
       feedback: '意见反馈'
+      contact: '官方咨询'
     attributes:
       app_version:
         version: "版本号"
@@ -343,6 +344,10 @@
         title: '标题'
         telephone: '联系方式'
         line_type: '热线类型'
+      contact:
+        mobile: '手机号'
+        email: '邮箱'
+        created_at: '创建时间'
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'
