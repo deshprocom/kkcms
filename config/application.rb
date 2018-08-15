@@ -31,5 +31,8 @@ module Kkcms
     config.eager_load_paths += [
         Rails.root.join('lib/qcloud')
     ]
+
+    # sanitize 自定义白名单
+    config.action_view.sanitized_allowed_attributes = Set.new(%w(href src width height alt cite datetime title class name xml:lang abbr style))
   end
 end
