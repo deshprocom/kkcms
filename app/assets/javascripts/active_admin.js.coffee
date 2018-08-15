@@ -1,6 +1,7 @@
 #= require active_admin/base
 #= require simditor
 #= require simditor-kkcolor
+#= require simditor-font-size
 #= require jquery.remotipart
 #= require best_in_place
 #= require jquery.colorbox-min
