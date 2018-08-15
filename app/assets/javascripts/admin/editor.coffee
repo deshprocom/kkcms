@@ -24,7 +24,7 @@ $ ->
       )
 
     new: (textarea, options) ->
-      toolbar = ['title', 'bold', 'color', 'alignment', 'italic', 'underline', 'strikethrough' ,'hr', '|', 'ol', 'ul', 'blockquote', 'table', 'link','image']
+      toolbar = ['title', 'bold', 'fontScale', 'kkcolor', 'alignment', 'italic', 'underline', 'strikethrough' ,'hr', '|', 'ol', 'ul', 'blockquote', 'table', 'link','image']
 
       placeholder = if options['placeholder'] then options['placeholder'] else '这里输入文字...'
       new Simditor(
