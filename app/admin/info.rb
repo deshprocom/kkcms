@@ -7,7 +7,7 @@ ActiveAdmin.register Info do
   filter :published
   filter :stickied
 
-  permit_params :title, :date, :image, :published, :description, :info_type_id, :coupon_ids, :audio_link
+  permit_params :title, :date, :image, :published, :description, :info_type_id, :coupon_ids, :audio_link, :intro
   form partial: 'form'
 
   show do

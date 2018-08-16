@@ -108,6 +108,7 @@
         room_sales: "已卖数量"
       info:
         title: "标题"
+        intro: "简介"
         info_type: "类型"
         date: "日期"
         image: "图片"
