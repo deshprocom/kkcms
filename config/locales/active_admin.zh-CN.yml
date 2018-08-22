@@ -5,6 +5,8 @@
     empty: "空"
     scopes:
       all: '全部'
+      local: '本地'
+      receiving: '收货'
       unpaid: '待付款'
       paid: '待发货'
       delivered: '已发货'
@@ -47,6 +49,7 @@
   exchange_rate:
     real_time: '实时汇率'
     local: '本地汇率'
+    receiving: '收货汇率'
   shipping:
     free_shipping: '免邮'
     number: '按件数计费'

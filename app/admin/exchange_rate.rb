@@ -2,6 +2,7 @@ ActiveAdmin.register ExchangeRate do
   menu parent: '外汇管理'
   config.filters = false
   scope :local, default: true
+  scope :receiving
   scope :all
 
   permit_params :s_currency, :s_currency_no, :t_currency, :t_currency_no, :rate, :rate_type, :updated_at
