@@ -14,6 +14,7 @@
         image: "分类图片"
       shop/product:
         title: "商品标题"
+        intro: "商品简介"
         icon: "商品图标"
         type: "商品类型"
         freight: "运费模板"
