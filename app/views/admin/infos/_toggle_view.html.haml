@@ -3,7 +3,7 @@
 
 %div.common_toggle_view
   %div.toggle_form
-    = form_tag(views_admin_topic_path(resource), method: :post) do
+    = form_tag(views_admin_info_path(resource), method: :post) do
       %div.on_off
         %span= label_tag 'on_off', '浏览量增长: '
         %span= select_tag(:on_off, options_for_select([['开', 'on'], ['关', 'off']], status))
