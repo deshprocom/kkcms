@@ -7,7 +7,7 @@ ActiveAdmin.register Info do
   filter :published
   filter :stickied
 
-  permit_params :title, :date, :image, :published, :description, :info_type_id, :coupon_ids, :audio_link, :intro
+  permit_params :title, :date, :image, :published, :description, :view_increment, :info_type_id, :coupon_ids, :audio_link, :intro
   form partial: 'form'
 
   show do
@@ -30,7 +30,7 @@ ActiveAdmin.register Info do
     end
 
     def process_coupon_ids
-      coupon_ids = params[:info][:coupon_ids].split(/,\s*|，\s*/)
+      coupon_ids = params[:info][:coupon_ids]&.split(/,\s*|，\s*/)
       return if coupon_ids.blank?
       params[:info][:coupon_ids] = coupon_ids.join(',')
     end
