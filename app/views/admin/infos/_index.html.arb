@@ -6,7 +6,9 @@ context.instance_eval do
   column(:date, sortable: false)
   column(:published, sortable: false) { |info| info_publish_link(info) }
   column(:stickied, sortable: false) { |info| info_sticky_link(info) }
-  actions
+  actions name: '操作' do |topic|
+    item '浏览量', views_admin_info_path(topic), remote: true
+  end
 end
 
 
