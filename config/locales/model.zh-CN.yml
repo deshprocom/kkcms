@@ -86,6 +86,7 @@
         pay_channel: '支付渠道'
         telephone: '联系方式'
         user_email_or_user_mobile: '用户账户(手机或邮箱)'
+        created_at: '创建时间'
       hotel_room:
         hotel: "酒店"
         title: "房间标题"
