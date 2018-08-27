@@ -7,7 +7,7 @@ ActiveAdmin.register Info do
   filter :published
   filter :stickied
 
-  permit_params :title, :date, :image, :published, :description, :info_type_id, :coupon_ids, :audio_link, :intro
+  permit_params :title, :date, :image, :published, :description, :view_increment, :info_type_id, :coupon_ids, :audio_link, :intro
   form partial: 'form'
 
   show do
@@ -30,7 +30,7 @@ ActiveAdmin.register Info do
     end
 
     def process_coupon_ids
-      coupon_ids = params[:info][:coupon_ids].split(/,\s*|，\s*/)
+      coupon_ids = params[:info][:coupon_ids]&.split(/,\s*|，\s*/)
       return if coupon_ids.blank?
       params[:info][:coupon_ids] = coupon_ids.join(',')
     end
@@ -63,5 +63,23 @@ ActiveAdmin.register Info do
   member_action :unsticky, method: :post do
     Info.find(params[:id]).unsticky!
     redirect_back fallback_location: admin_infos_url, notice: I18n.t('unsticky_notice')
+  end
+
+  member_action :views, method: [:get, :post] do
+    view_toggle = resource.view_toggle
+    unless request.post?
+      @common_view_toggle = view_toggle.present? ? view_toggle : ViewToggle.new
+      return render :toggle_view
+    end
+    on_off = params[:on_off].eql?('on') ? true : false
+    hot = params[:type].eql?('hot') ? true : false
+    # 判断之前是否有保存过
+    create_params = { target: resource,
+                      toggle_status: on_off,
+                      hot: hot,
+                      begin_time: Time.zone.now,
+                      last_time: Time.zone.now }
+    view_toggle.present? ? view_toggle.update(create_params) : ViewToggle.create(create_params)
+    redirect_back fallback_location: admin_infos_url, notice: '更改成功'
   end
 end
