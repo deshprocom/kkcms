@@ -93,4 +93,9 @@ ActiveAdmin.register Info do
     end
     redirect_back fallback_location: admin_infos_url, notice: '创建成功'
   end
+
+  member_action :people_likes, method: :get do
+    @page_title = "点赞列表 (#{resource.likes_count})"
+    @like_by_users = resource.like_by_users.page(params[:page])
+  end
 end
