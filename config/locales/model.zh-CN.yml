@@ -119,6 +119,7 @@
         updated_at: "修改时间"
         doc: "导入文档"
         coupon_ids: "可领的优惠券"
+        likes_count: '点赞数'
         audio_link: "音频链接"
         page_views: '浏览量(真实)'
         view_increment: '浏览量(增量)'
