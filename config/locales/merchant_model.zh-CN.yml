@@ -1,0 +1,21 @@
+"zh-CN":
+  activerecord:
+    models:
+      sale_room_request: '挂售申请'
+    attributes:
+      sale_room_request:
+        merchant_user: '商户'
+        hotel: '酒店'
+        hotel_room: '房间'
+        room_num: '房号'
+        card_img: '房卡'
+        checkin_date: '入住时间'
+        price: '价格'
+        status: '状态'
+        is_sold: '是否卖出'
+        is_withdrawn: '是否提现'
+        passed_time: '通过时间'
+        withdrawn_time: '提现时间'
+        updated_time: '更新时间'
+        created_time: '创建时间'
+        refused_memo: '拒绝原因'
