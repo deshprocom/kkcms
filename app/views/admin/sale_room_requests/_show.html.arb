@@ -4,7 +4,7 @@ context.instance_eval do
     row(:hotel)
     row(:hotel_room)
     row(:room_num)
-    row(:card_img) { |req| image_tag(req.card_img.url, height: 150) }
+    row(:card_img) { |req| image_tag(req.card_img.url.to_s, height: 150) }
     row(:checkin_date)
     row(:price)
     row(:status)
