@@ -64,6 +64,8 @@
     pending: '审核中'
     passed: '审核通过'
     failed: '审核失败'
+    refused: '审核被拒'
+    canceled: '用户取消'
   refund:
     none: '正常'
     open: '退款中'

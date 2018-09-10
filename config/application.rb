@@ -24,7 +24,8 @@ module Kkcms
 
     # auto_load
     config.autoload_paths += [
-        Rails.root.join('lib')
+        Rails.root.join('lib'),
+        Rails.root.join('app/models/merchant'),
     ]
 
     # eager_load
