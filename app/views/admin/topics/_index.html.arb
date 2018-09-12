@@ -34,5 +34,6 @@ context.instance_eval do
   actions name: '操作', defaults: false do |topic|
     item '详情', admin_topic_path(topic)
     item '浏览量', views_admin_topic_path(topic), remote: true
+    item ' 随机点赞', generate_likes_admin_topic_path(topic), remote: true
   end
 end
