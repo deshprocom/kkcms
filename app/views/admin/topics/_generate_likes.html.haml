@@ -1,0 +1,7 @@
+%div.info_likes
+  = form_tag generate_likes_admin_topic_path, method: :post do
+    %div
+      %span 生成数量：
+      %span= text_field_tag :number
+    %div
+      = submit_tag '提交'
