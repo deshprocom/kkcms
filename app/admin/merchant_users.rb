@@ -1,7 +1,7 @@
 ActiveAdmin.register MerchantUser do
   menu parent: '商家管理', label: '商家用户'
 
-  actions :all, except: [:destroy, :edit]
+  actions :all, except: [:new, :destroy, :edit]
   permit_params :mark
 
   config.sort_order = 'last_visit_desc'
