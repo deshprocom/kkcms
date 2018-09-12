@@ -66,6 +66,7 @@ ActiveAdmin.register Topic do
       next if user.find_action(:like, target: resource).present?
       user.create_action(:like, target: resource)
       user.dynamics.create(option_type: 'like', target: resource)
+      TopicNotification.create(user: resource.user, target: user, source: resource, notify_type: 'like')
     end
     redirect_back fallback_location: admin_topics_url, notice: '创建成功'
   end
