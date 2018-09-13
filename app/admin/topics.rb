@@ -59,15 +59,14 @@ ActiveAdmin.register Topic do
     redirect_back fallback_location: admin_topics_url, notice: '更改成功'
   end
 
-  member_action :generate_likes, method: [:get, :post] do
-    return if request.get?
-    User.where(r_level: 0).take(params[:number].to_i).shuffle.each do |user|
-      # 如果用户点赞过了 就不用再次点赞了
-      next if user.find_action(:like, target: resource).present?
+  member_action :generate_likes, method: [:post] do
+    user = User.where(r_level: 0).shuffle.first
+    # 如果用户点赞过了 就不用再次点赞了
+    if user.find_action(:like, target: resource).blank?
       user.create_action(:like, target: resource)
       user.dynamics.create(option_type: 'like', target: resource)
       TopicNotification.create(user: resource.user, target: user, source: resource, notify_type: 'like')
     end
-    redirect_back fallback_location: admin_topics_url, notice: '创建成功'
+    redirect_back fallback_location: admin_topics_url, notice: '点赞成功'
   end
 end
