@@ -2,8 +2,16 @@
   activerecord:
     models:
       sale_room_request: '挂售申请'
+      room_request_withdrawal: '房间提现'
       merchant_user: '商家用户'
     attributes:
+      room_request_withdrawal:
+        mobile: '商户手机号'
+        created_at: '创建时间'
+        updated_at: '更新时间'
+        status: '状态'
+        price: '价格'
+        sale_room_request: '挂售申请'
       sale_room_request:
         merchant_user: '商户'
         hotel: '酒店'
@@ -17,6 +25,9 @@
         is_withdrawn: '是否提现'
         passed_time: '通过时间'
         withdrawn_time: '提现时间'
+        updated_at: '更新时间'
+        created_at: '创建时间'
+        refused_memo: '拒绝原因'
         updated_time: '更新时间'
         created_time: '创建时间'
         refused_memo: '拒绝原因'
