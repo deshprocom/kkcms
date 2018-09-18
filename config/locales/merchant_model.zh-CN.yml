@@ -3,6 +3,7 @@
     models:
       sale_room_request: '挂售申请'
       room_request_withdrawal: '房间提现'
+      merchant_user: '商家用户'
     attributes:
       room_request_withdrawal:
         mobile: '商户手机号'
@@ -11,7 +12,6 @@
         status: '状态'
         price: '价格'
         sale_room_request: '挂售申请'
-
       sale_room_request:
         merchant_user: '商户'
         hotel: '酒店'
@@ -28,3 +28,18 @@
         updated_at: '更新时间'
         created_at: '创建时间'
         refused_memo: '拒绝原因'
+        updated_time: '更新时间'
+        created_time: '创建时间'
+        refused_memo: '拒绝原因'
+      merchant_user:
+        nick_name: '用户名'
+        user_uuid: 'UUID'
+        mobile: '手机号'
+        ext: '区号'
+        contact: '联系方式'
+        last_visit: '上次登录'
+        mark: '备注'
+        password: '密码'
+        blocked: '是否封禁'
+        blocked_at: '封禁时间'
+        created_at: '创建时间'
