@@ -21,7 +21,7 @@ context.instance_eval do
       end
 
       panel '指定日期的特定价格 (只显示从今天开始之后的日期)' do
-        table_for resource.prices.where('date >= ?', Date.current) do
+        table_for resource.prices.where('date >= ?', Date.current).where(sale_room_request_id: nil) do
           column(:date)
           column(:price)
           column(:room_num_limit)
