@@ -25,7 +25,19 @@ module HotelServices
       reduce_integral
       @refund.completed!
       @order.update(status: 'refunded', refund_price: @refund.refund_price)
+      update_sales_room
       ApiResult.success_result
+    end
+
+    # 退款成功，修改每日房间已卖出的数量
+    def update_sales_room
+      @order.room_items.each do |item|
+        next if item['price_id'].blank?
+
+        room_price = HotelRoomPrice.find(item['price_id'])
+        room_price.decrease_sales(@order.room_num)
+        room_price.sale_room_request&.to_refund
+      end
     end
 
     def refund_coupon

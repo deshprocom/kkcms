@@ -58,4 +58,15 @@ ActiveAdmin.register Topic do
     view_toggle.present? ? view_toggle.update(create_params) : ViewToggle.create(create_params)
     redirect_back fallback_location: admin_topics_url, notice: '更改成功'
   end
+
+  member_action :generate_likes, method: [:post] do
+    user = User.where(r_level: 0).shuffle.first
+    # 如果用户点赞过了 就不用再次点赞了
+    if user.find_action(:like, target: resource).blank?
+      user.create_action(:like, target: resource)
+      user.dynamics.create(option_type: 'like', target: resource)
+      TopicNotification.create(user: resource.user, target: user, source: resource, notify_type: 'like')
+    end
+    redirect_back fallback_location: admin_topics_url, notice: '点赞成功'
+  end
 end
