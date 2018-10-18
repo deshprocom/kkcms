@@ -34,6 +34,7 @@
       withdrawal: '提款单'
       feedback: '意见反馈'
       contact: '官方咨询'
+      activity: '活动'
     attributes:
       app_version:
         version: "版本号"
@@ -352,6 +353,19 @@
       contact:
         mobile: '手机号'
         email: '邮箱'
+        created_at: '创建时间'
+      activity:
+        title: '活动标题'
+        description: '活动内容'
+        banner: '封面图片'
+        begin_time: '开始时间'
+        end_time: '结束时间'
+        published: '是否发布'
+        canceled: '是否取消'
+        page_views: '浏览量(真实)'
+        view_increment: '浏览量(增量)'
+        likes_count: '点赞数'
+        doc: '导入文档'
         created_at: '创建时间'
       format: "%{attribute}%{message}"
       messages:
