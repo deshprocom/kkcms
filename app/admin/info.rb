@@ -85,7 +85,7 @@ ActiveAdmin.register Info do
 
   member_action :likes, method: [:get, :post] do
     return if request.get?
-    User.where(r_level: 0).take(params[:number].to_i).shuffle.each do |user|
+    User.where(r_level: 0).shuffle.take(params[:number].to_i).each do |user|
       # 如果用户点赞过了 就不用再次点赞了
       next if user.find_action(:like, target: resource).present?
       user.create_action(:like, target: resource)

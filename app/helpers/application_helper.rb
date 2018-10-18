@@ -39,6 +39,14 @@ module ApplicationHelper
     end
   end
 
+  def activity_publish_link(activity)
+    if activity.published?
+      link_to I18n.t('unpublish'), unpublish_admin_activity_path(activity), method: :post
+    else
+      link_to I18n.t('publish'), publish_admin_activity_path(activity), method: :post
+    end
+  end
+
   def invite_award_publish_link(resource)
     if resource.published?
       link_to I18n.t('unpublish'), unpublish_admin_invite_award_path(resource), method: :post

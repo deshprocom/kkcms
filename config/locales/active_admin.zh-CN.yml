@@ -46,6 +46,8 @@
     refunded: '已退款'
   info:
     destroy_error: '已发布的资讯，不允许删除'
+  activity:
+    destroy_error: '已发布的活动，不允许删除'
   exchange_rate:
     real_time: '实时汇率'
     local: '本地汇率'
