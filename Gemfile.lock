@@ -149,7 +149,7 @@ GEM
     execjs (2.7.0)
     fancybox2-rails (0.2.7)
       railties (>= 3.1.0)
-    faraday (0.15.0)
+    faraday (0.15.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.23)
     formtastic (3.1.5)
@@ -440,6 +440,9 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   whenever
   wx_pay
+
+RUBY VERSION
+   ruby 2.5.0p0
 
 BUNDLED WITH
    1.16.1
