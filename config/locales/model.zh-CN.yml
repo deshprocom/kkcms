@@ -34,6 +34,7 @@
       withdrawal: '提款单'
       feedback: '意见反馈'
       contact: '官方咨询'
+      sauna: '桑拿'
     attributes:
       app_version:
         version: "版本号"
@@ -353,6 +354,17 @@
         mobile: '手机号'
         email: '邮箱'
         created_at: '创建时间'
+      sauna:
+        title: '标题'
+        location: '位置'
+        price: '人均'
+        telephone: '联系方式'
+        star_level: '星级'
+        amap_poiid: '高德poi'
+        amap_location: '高德经纬度'
+        logo: '图标'
+        published: '是否发布'
+        description: '描述'
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'

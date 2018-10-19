@@ -32,6 +32,8 @@
   unexcellent: '取消精选'
   hotel:
     destroy_error: '已发布的酒店，不允许删除'
+  sauna:
+    destroy_error: '已发布的桑拿，不允许删除'
   hotel_refund:
     pending: '等待处理中'
     refused: '已拒绝该申请'
