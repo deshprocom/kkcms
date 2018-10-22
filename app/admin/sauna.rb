@@ -1,4 +1,6 @@
 ActiveAdmin.register Sauna do
+  menu priority: 3, parent: '资讯管理', label: '桑拿'
+
   filter :title
   filter :location
   filter :published
@@ -8,7 +10,7 @@ ActiveAdmin.register Sauna do
   end
 
   permit_params :title,  :logo, :location, :telephone, :description, :star_level,
-                :amap_poiid, :amap_location, :position, :price, :published
+                :amap_poiid, :amap_location, :position, :price, :published, :longitude, :latitude
   form partial: 'form'
 
   show do

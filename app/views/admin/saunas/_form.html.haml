@@ -8,6 +8,8 @@
     = f.input :star_level
     = f.input :amap_poiid, hint: content_tag('a', '获取高德详情', class: 'get_amap_detail', style: 'cursor:pointer')
     = f.input :amap_location
+    = f.input :longitude, as: :hidden
+    = f.input :latitude, as: :hidden
     = f.input :logo, as: :attachment, required: true,
                      hint: '图片最大为 2MB',
                      image: proc { |o| o.preview_logo }
