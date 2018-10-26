@@ -23,6 +23,23 @@ module ApplicationHelper
     end
   end
 
+  def sauna_publish_link(sauna)
+    if sauna.published?
+      link_to I18n.t('unpublish'), unpublish_admin_sauna_path(sauna), method: :post
+    else
+      link_to I18n.t('publish'), publish_admin_sauna_path(sauna), method: :post
+    end
+  end
+
+  def sauna_sidebar_generator(context)
+    context.instance_eval do
+      ul do
+        li link_to '详情', admin_sauna_path(sauna)
+        li link_to '图片管理', admin_sauna_sauna_images_path(sauna)
+      end
+    end
+  end
+
   def info_publish_link(info)
     if info.published?
       link_to I18n.t('unpublish'), unpublish_admin_info_path(info), method: :post
