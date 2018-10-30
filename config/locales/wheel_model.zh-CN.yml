@@ -1,0 +1,16 @@
+"zh-CN":
+  activerecord:
+    models:
+      wheel_element: '转盘元素'
+      wheel_prize: '转盘奖品'
+    attributes:
+      wheel_element:
+        name: '名称'
+        image: '图片'
+        position: '排序'
+      wheel_prize:
+        wheel_element: '转盘元素'
+        prize_type: '奖品类型'
+        name: '名称'
+        limit_per_day: '小奖每日限额'
+        generation_rule: '大奖产生规则'

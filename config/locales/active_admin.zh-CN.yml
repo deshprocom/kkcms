@@ -120,6 +120,10 @@
   hotline_type:
     fast_food: '快餐热线'
     public_service: '便民热线'
+  prize_type:
+    free: '无成本'
+    cheap: '小奖'
+    expensive: '大奖'
   time:
     formats:
       long: "%Y-%m-%d %H:%M:%S"
