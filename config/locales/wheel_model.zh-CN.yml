@@ -5,6 +5,7 @@
       wheel_prize: '转盘奖品'
       cheap_prize_count: '小奖统计'
       expensive_prize_count: '大奖统计'
+      wheel_user_prize: '用户抽奖情况'
     attributes:
       wheel_element:
         name: '名称'
@@ -24,3 +25,10 @@
         wheel_prize: '奖品'
         current_user_num: '当前的用户数量'
         is_giving: '是否已被用户抽中'
+      wheel_user_prize:
+        wheel_prize: '奖品'
+        user: '用户'
+        memo: '中奖说明'
+        used: '奖品是否兑换'
+        is_expensive: '是否大奖'
+        used_time: '兑换时间'
