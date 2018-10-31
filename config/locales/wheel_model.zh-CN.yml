@@ -3,6 +3,8 @@
     models:
       wheel_element: '转盘元素'
       wheel_prize: '转盘奖品'
+      cheap_prize_count: '小奖统计'
+      expensive_prize_count: '大奖统计'
     attributes:
       wheel_element:
         name: '名称'
@@ -14,3 +16,11 @@
         name: '名称'
         limit_per_day: '小奖每日限额'
         generation_rule: '大奖产生规则'
+      cheap_prize_count:
+        wheel_prize: '奖品'
+        date: '日期'
+        prize_number: '中奖数量'
+      expensive_prize_count:
+        wheel_prize: '奖品'
+        current_user_num: '当前的用户数量'
+        is_giving: '是否已被用户抽中'

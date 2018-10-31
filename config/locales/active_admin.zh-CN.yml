@@ -19,6 +19,10 @@
       dating: '交友达人'
       fast_food: '快餐热线'
       public_service: '便民热线'
+    filters:
+      predicates:
+        from: '开始日期'
+        to: '结束日期'
 
   publish: "发布"
   unpublish: "取消发布"
