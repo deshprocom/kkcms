@@ -6,4 +6,9 @@ ActiveAdmin.register WheelUserPrize do
   filter :wheel_prize
   filter :is_expensive
   filter :used
+  filter :prize_type, as: :select, collection: AdminTrans::WHEEL_PRIZE_TYPES
+
+  index do
+    render 'index', context: self
+  end
 end
