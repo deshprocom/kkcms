@@ -15,6 +15,8 @@
         wheel_element: '转盘元素'
         prize_type: '奖品类型'
         name: '名称'
+        image: '图片'
+        face_value: '面值'
         limit_per_day: '小奖每日限额'
         generation_rule: '大奖产生规则'
       cheap_prize_count:
@@ -30,5 +32,6 @@
         user: '用户'
         memo: '中奖说明'
         used: '奖品是否兑换'
+        prize_type: '奖品类型'
         is_expensive: '是否大奖'
         used_time: '兑换时间'
