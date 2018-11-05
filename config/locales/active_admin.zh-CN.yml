@@ -128,6 +128,9 @@
     free: '无成本'
     cheap: '小奖'
     expensive: '大奖'
+  wheel_count:
+    'total': '总计'
+    'daily': '每日'
   time:
     formats:
       long: "%Y-%m-%d %H:%M:%S"
