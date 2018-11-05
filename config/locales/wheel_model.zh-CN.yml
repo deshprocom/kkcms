@@ -6,6 +6,7 @@
       cheap_prize_count: '小奖统计'
       expensive_prize_count: '大奖统计'
       wheel_user_prize: '用户抽奖情况'
+      wheel_count: '转盘统计'
     attributes:
       wheel_element:
         name: '名称'
@@ -35,3 +36,10 @@
         prize_type: '奖品类型'
         is_expensive: '是否大奖'
         used_time: '兑换时间'
+      wheel_count:
+        daily_new_user_count: '日新增注册人数'
+        new_user_count: '新增人数'
+        date: '日期'
+        lottery_times: '转盘次数'
+        lottery_users: '转盘用户数'
+        created_at: '创建日期'
