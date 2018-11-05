@@ -3,7 +3,6 @@ context.instance_eval do
   column(:date)
   column(:daily_new_user_count)
   column(:created_at)
-  actions
 end
 
 

@@ -15,4 +15,10 @@ ActiveAdmin.register WheelCount do
       li "转盘总用户数: #{WheelUserPrize.select(:user_id).distinct.count}"
     end
   end
+
+  controller do
+    def scoped_collection
+      super.daily
+    end
+  end
 end
