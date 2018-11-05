@@ -10,7 +10,6 @@ ActiveAdmin.register WheelCount do
 
   sidebar :'转盘总的统计', only: :index do
     ul do
-      li "总新增人数：#{WheelCount.total.first.new_user_count}人"
       li "转盘总次数: #{WheelCount.total.first.lottery_times}次"
       li "转盘总用户数: #{WheelUserPrize.select(:user_id).distinct.count}"
     end
