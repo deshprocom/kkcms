@@ -3,13 +3,16 @@ context.instance_eval do
   column(:user, sortable: false)
   column(:wheel_prize, sortable: false)
   column(:prize_type) {|prize| I18n.t("prize_type.#{prize.prize_type}")}
-  column(:memo, sortable: false)
   column(:is_expensive, sortable: false)
   column(:used, sortable: false)
   column(:used_time)
-  column(:updated_at)
+  column(:used_memo)
   column(:created_at)
-  actions
+  actions defaults: false do |prize|
+    unless prize.used
+      item '兑奖', use_prize_admin_wheel_user_prize_url(prize), class: 'member_link', remote: true
+    end
+  end
 end
 
 
