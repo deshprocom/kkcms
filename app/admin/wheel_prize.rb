@@ -11,6 +11,6 @@ ActiveAdmin.register WheelPrize do
     render 'show', context: self
   end
 
-  permit_params :name, :prize_type, :limit_per_day, :generation_rule, :wheel_element_id, :image, :face_value
+  permit_params :name, :prize_type, :limit_per_day, :generation_rule, :wheel_element_id, :image, :face_value, :description
   form partial: 'form'
 end

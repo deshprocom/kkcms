@@ -20,6 +20,7 @@
         face_value: '面值'
         limit_per_day: '小奖每日限额'
         generation_rule: '大奖产生规则'
+        description: '奖品领取说明'
       cheap_prize_count:
         wheel_prize: '奖品'
         date: '日期'
