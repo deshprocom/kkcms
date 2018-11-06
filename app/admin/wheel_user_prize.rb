@@ -11,4 +11,11 @@ ActiveAdmin.register WheelUserPrize do
   index do
     render 'index', context: self
   end
+
+  member_action :use_prize, method: [:get, :post] do
+    return if request.get?
+
+    resource.update(used: true, used_time: Time.current, used_memo: params[:used_memo])
+    redirect_to admin_wheel_user_prizes_url
+  end
 end
