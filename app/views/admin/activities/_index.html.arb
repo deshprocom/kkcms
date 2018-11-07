@@ -1,6 +1,7 @@
 context.instance_eval do
   column(:id)
   column(:title, sortable: false)
+  column(:intro, sortable: false)
   column(:banner, sortable: false) { |activity| img_link_to_show(activity, activity.preview_image) }
   column :begin_time
   column :end_time

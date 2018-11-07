@@ -2,6 +2,7 @@
   = f.semantic_errors *f.object.errors.keys
   = f.inputs do
     = f.input :title
+    = f.input :intro
     = f.input :banner, as: :attachment, required: true,
                      hint: '图片最大为 2MB',
                      image: proc { |o| o.preview_image }
