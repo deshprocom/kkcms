@@ -17,4 +17,7 @@ module AdminTrans
 
   WITHDRAWAL_ACCOUNT_TYPE = %w[alipay bank].collect { |d| [I18n.t("withdraw_type.#{d}"), d] }
 
-  WITHDRAWAL_OPTION_STATUS = %w[pending success failed].collect { |d| [I18n.t("withdraw_status.#{d}"), d] } end
+  WITHDRAWAL_OPTION_STATUS = %w[pending success failed].collect { |d| [I18n.t("withdraw_status.#{d}"), d] }
+
+  WHEEL_PRIZE_TYPES = WheelPrize.prize_types.keys.collect { |d| [I18n.t("prize_type.#{d}"), d] }
+end

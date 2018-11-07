@@ -19,6 +19,10 @@
       dating: '交友达人'
       fast_food: '快餐热线'
       public_service: '便民热线'
+    filters:
+      predicates:
+        from: '开始日期'
+        to: '结束日期'
 
   publish: "发布"
   unpublish: "取消发布"
@@ -32,6 +36,8 @@
   unexcellent: '取消精选'
   hotel:
     destroy_error: '已发布的酒店，不允许删除'
+  sauna:
+    destroy_error: '已发布的桑拿，不允许删除'
   hotel_refund:
     pending: '等待处理中'
     refused: '已拒绝该申请'
@@ -46,6 +52,8 @@
     refunded: '已退款'
   info:
     destroy_error: '已发布的资讯，不允许删除'
+  activity:
+    destroy_error: '已发布的活动，不允许删除'
   exchange_rate:
     real_time: '实时汇率'
     local: '本地汇率'
@@ -116,6 +124,13 @@
   hotline_type:
     fast_food: '快餐热线'
     public_service: '便民热线'
+  prize_type:
+    free: '无成本'
+    cheap: '小奖'
+    expensive: '大奖'
+  wheel_count:
+    'total': '总计'
+    'daily': '每日'
   time:
     formats:
       long: "%Y-%m-%d %H:%M:%S"

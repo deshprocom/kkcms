@@ -7,9 +7,7 @@
     = f.input :audio_link
     = f.input :coupon_ids, hint: '每个优惠券id以逗号分开。例： 22,33'
     = f.input :date
-    = f.input :image, as: :attachment, required: true,
-                     hint: '图片最大为 2MB',
-                     image: proc { |o| o.preview_image }
+    = f.input :image, as: :attachment, hint: '图片最大为 2MB', image: proc { |o| o.preview_image }
     = f.input :published
     = f.input :doc, as: :file, hint: '必须为docx格式', input_html: {name: 'doc'}
     ~ f.text_area :description
