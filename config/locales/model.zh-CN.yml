@@ -367,8 +367,8 @@
         published: '是否发布'
         description: '描述'
       activity:
-        title: '活动标题'
-        description: '活动内容'
+        title: '标题'
+        description: '内容'
         banner: '封面图片'
         begin_time: '开始时间'
         end_time: '结束时间'
@@ -379,6 +379,7 @@
         likes_count: '点赞数'
         doc: '导入文档'
         created_at: '创建时间'
+        intro: '活动简介'
       format: "%{attribute}%{message}"
       messages:
         blank: '不能为空'
