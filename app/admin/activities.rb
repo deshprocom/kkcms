@@ -1,5 +1,5 @@
 ActiveAdmin.register Activity do
-  permit_params :title, :banner, :published, :description, :begin_time, :end_time, :view_increment
+  permit_params :title, :banner, :published, :description, :begin_time, :end_time, :view_increment, :intro
 
   filter :id
   filter :title
