@@ -20,12 +20,13 @@ ActiveAdmin.register WheelUserPrize do
   end
 
   member_action :giving_cash, method: :post do
-    return if resource.used
+    unless resource.used
+      resource.update(used: true, used_time: Time.current, used_memo: '后台确认发放大奖红包')
+      PocketMoney.create_wheel_pocket_money(user: resource.user,
+                                            target: resource,
+                                            amount: resource.wheel_prize.face_value)
+    end
 
-    resource.update(used: true, used_time: Time.current, used_memo: '后台确认发放大奖红包')
-    PocketMoney.create_wheel_pocket_money(user: resource.user,
-                                          target: resource,
-                                          amount: resource.wheel_prize.face_value)
     redirect_back fallback_location: admin_wheel_user_prizes_url, notice: '发放成功'
   end
 end
