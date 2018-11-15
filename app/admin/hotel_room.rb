@@ -4,8 +4,11 @@ ActiveAdmin.register HotelRoom do
 
   belongs_to :hotel
 
-  permit_params :title, :hotel_id, :text_tags, :text_notes, :published, :room_num_limit
+  show do
+    render 'show', context: self
+  end
 
+  permit_params :title, :hotel_id, :text_tags, :text_notes, :published, :room_num_limit
   form partial: 'form'
 
   controller do
@@ -82,9 +85,35 @@ ActiveAdmin.register HotelRoom do
     def set_hotel_room
       @hotel_room = params[:id] ? HotelRoom.find(params[:id]) : HotelRoom.new(permitted_params[:hotel_room])
     end
+
+    def strict_sync_price(source_room_prices, target_room)
+      source_room_prices.each do |source_price|
+        next if target_room.prices.where(date: source_price.date, sale_room_request_id: nil).exists?
+
+        target_room.prices.create(hotel_id: target_room.hotel_id,
+                                  date: source_price.date,
+                                  price: source_price.price,
+                                  room_num_limit: source_price.room_num_limit)
+
+      end
+    end
   end
 
-  show do
-    render 'show', context: self
+  member_action :sync_prices, method: :post do
+    target_rooms = HotelRoom.where(hotel_id: resource.hotel_id, id: params[:hotel][:sync_rooms])
+    source_room_prices = resource.prices.where('date >= ?', Date.current).where(sale_room_request_id: nil)
+    target_rooms.each do |target_room|
+      strict_sync_price(source_room_prices, target_room)
+    end
+    redirect_back fallback_location: admin_hotel_hotel_room_path(resource.hotel_id, resource), notice: '同步房间价格成功，操作人请确认相应房间的价格'
+  end
+
+  member_action :new_sync_prices, method: :get do
+    @rooms_collection = resource.hotel.hotel_rooms.order(id: :desc).map do |room|
+      next if room.id === resource.id
+      
+      checked = room.published && !room.title.match('特价')
+      ["#{ room.published ? '已上架' : '未上架'} - #{room.title}", room.id , { checked: checked }]
+    end
   end
 end
