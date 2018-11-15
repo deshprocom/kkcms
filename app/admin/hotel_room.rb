@@ -111,9 +111,9 @@ ActiveAdmin.register HotelRoom do
   member_action :new_sync_prices, method: :get do
     @rooms_collection = resource.hotel.hotel_rooms.order(id: :desc).map do |room|
       next if room.id === resource.id
-      
+
       checked = room.published && !room.title.match('特价')
       ["#{ room.published ? '已上架' : '未上架'} - #{room.title}", room.id , { checked: checked }]
-    end
+    end.compact
   end
 end
