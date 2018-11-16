@@ -86,15 +86,20 @@ ActiveAdmin.register HotelRoom do
       @hotel_room = params[:id] ? HotelRoom.find(params[:id]) : HotelRoom.new(permitted_params[:hotel_room])
     end
 
-    def strict_sync_price(source_room_prices, target_room)
+    def strict_sync_price(source_room_prices, target_room, is_cover)
       source_room_prices.each do |source_price|
-        next if target_room.prices.where(date: source_price.date, sale_room_request_id: nil).exists?
+        target_price = target_room.prices.find_by(date: source_price.date, sale_room_request_id: nil)
+        # 如果不覆盖而且已存在price则跳过
+        next if is_cover.to_i == 0 && target_price.present?
 
-        target_room.prices.create(hotel_id: target_room.hotel_id,
-                                  date: source_price.date,
-                                  price: source_price.price,
-                                  room_num_limit: source_price.room_num_limit)
-
+        if target_price.present?
+          target_price.update(price: source_price.price, room_num_limit: source_price.room_num_limit)
+        else
+          target_room.prices.create(hotel_id: target_room.hotel_id,
+                                    date: source_price.date,
+                                    price: source_price.price,
+                                    room_num_limit: source_price.room_num_limit)
+        end
       end
     end
   end
@@ -103,7 +108,7 @@ ActiveAdmin.register HotelRoom do
     target_rooms = HotelRoom.where(hotel_id: resource.hotel_id, id: params[:hotel][:sync_rooms])
     source_room_prices = resource.prices.where('date >= ?', Date.current).where(sale_room_request_id: nil)
     target_rooms.each do |target_room|
-      strict_sync_price(source_room_prices, target_room)
+      strict_sync_price(source_room_prices, target_room, params[:hotel][:is_cover])
     end
     redirect_back fallback_location: admin_hotel_hotel_room_path(resource.hotel_id, resource), notice: '同步房间价格成功，操作人请确认相应房间的价格'
   end
