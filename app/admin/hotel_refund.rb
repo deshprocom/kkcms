@@ -32,7 +32,7 @@ ActiveAdmin.register HotelRefund do
     if result.failure?
       flash[:error] = result.msg
     else
-      flash[:notice] = '退换成功'
+      flash[:notice] = '退款成功'
     end
     redirect_to resource_url(resource)
   end

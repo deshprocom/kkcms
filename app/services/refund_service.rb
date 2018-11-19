@@ -15,7 +15,7 @@ class RefundService
   end
 
   def ali_refund
-    response = $alipay.execute(ali_params)
+    response = $alipay.execute(ali_params).encode('utf-8', 'gbk')
     result = JSON.parse(response)['alipay_trade_refund_response']
     if result['code'] == '10000' && result['fund_change'] == 'Y'
       return ApiResult.success_result
