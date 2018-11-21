@@ -1,4 +1,5 @@
 ActiveAdmin.register AppVersion do
+  menu priority: 8, parent: 'APP设置', label: 'APP版本管理'
   config.batch_actions = false
   config.filters = false
 
