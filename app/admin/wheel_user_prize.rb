@@ -3,6 +3,8 @@ ActiveAdmin.register WheelUserPrize do
   config.batch_actions = false
   actions :all, except: [:new, :edit, :create, :destroy]
 
+  filter :user_nick_name, as: :string
+  filter :user_mobile, as: :string
   filter :wheel_prize
   filter :is_expensive
   filter :used

@@ -38,6 +38,8 @@
         is_expensive: '是否大奖'
         used_time: '兑换时间'
         used_memo: '兑换备注'
+        user_nick_name: '用户昵称'
+        user_mobile: '用户手机号'
       wheel_count:
         daily_new_user_count: '日新增注册人数'
         new_user_count: '新增人数'
