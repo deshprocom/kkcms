@@ -36,6 +36,7 @@ context.instance_eval do
   column(:mark, sortable: false) { |i| best_in_place i, :mark, as: :input, url: [:admin, i] }
   column(:level_special, sortable: false) { |i| best_in_place i, :level_special, as: :input, url: [:admin, i] }
   column(:reg_date)
+  column(:latlng) { |i| "#{i.lat}~#{i.lng}" }
   column(:blocked, sortable: false)
   actions name: '操作'
 end

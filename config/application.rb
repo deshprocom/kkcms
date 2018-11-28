@@ -30,7 +30,8 @@ module Kkcms
 
     # eager_load
     config.eager_load_paths += [
-        Rails.root.join('lib/qcloud')
+        Rails.root.join('lib/qcloud'),
+        Rails.root.join('lib/geo/**')
     ]
 
     # sanitize 自定义白名单
