@@ -10,7 +10,7 @@ module Shop
     filter :by_root_category_in, label: '主类别', as: :select, collection: Category.roots_collection
 
     permit_params :title, :description, :product_type, :category_id, :recommended,
-                  :published, :returnable, :shipping_id, :intro,
+                  :published, :returnable, :shipping_id, :intro, :first_discounts,
                   master_attributes: [:original_price, :price, :stock,
                                       :volume, :origin_point, :weight]
 
