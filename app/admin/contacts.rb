@@ -1,4 +1,5 @@
 ActiveAdmin.register Contact do
+  menu priority: 8, parent: 'APP设置', label: 'APP联系方式'
   config.batch_actions = false
   config.filters = false
   permit_params :mobile, :email
