@@ -178,6 +178,12 @@
         level_special: '等级标记'
         login_count: '打开次数'
         r_level: '级别'
+        latlng: '经纬度'
+        location: '上次登陆位置'
+        created_at: '注册时间'
+        new_user: '新用户'
+        silenced: '禁言'
+        birthday: '生日'
       weixin_user:
         open_id: '微信ID'
         head_img: '微信头像'

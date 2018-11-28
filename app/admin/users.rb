@@ -16,6 +16,10 @@ ActiveAdmin.register User do
     render 'index', context: self
   end
 
+  show do
+    render 'show', context: self
+  end
+
   sidebar :'数量统计', only: :index do
     ul do
       li "用户总数：#{User.count}个"
