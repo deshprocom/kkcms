@@ -6,6 +6,7 @@ ActiveAdmin.register Withdrawal do
 
   filter :user_nick_name, as: :string
   filter :user_mobile, as: :string
+  filter :real_name
   filter :option_status, as: :select, collection: AdminTrans::WITHDRAWAL_OPTION_STATUS
   filter :account_type, as: :select, collection: AdminTrans::WITHDRAWAL_ACCOUNT_TYPE
   filter :account_memo
