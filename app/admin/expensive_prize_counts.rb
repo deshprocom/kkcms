@@ -5,4 +5,12 @@ ActiveAdmin.register ExpensivePrizeCount do
   actions :all, except: [:new, :edit, :create, :destroy]
 
   filter :wheel_prize
+
+  index do
+    column :id
+    column :wheel_prize
+    column :current_user_num
+    column :is_giving
+    column :created_at
+  end
 end
