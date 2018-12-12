@@ -6,6 +6,7 @@
       product: '商品'
       shop/product: '商品'
       shop/order: '订单'
+      one_yuan_buy: '一元购'
       shipping: '邮费模板'
       customer_return: '退换货'
     attributes:
@@ -60,3 +61,11 @@
         return_status: '退换状态'
         memo: '用户备注'
         admin_memo: '管理员备注'
+      shop/one_yuan_buy:
+        product: '商品'
+        begin_time: '开始时间'
+        end_time: '结束时间'
+        saleable_num: '可卖的数量'
+        sales_volume: '销售数量'
+        published: '是否发布'
+        viewable: '是否显示在列表中'
