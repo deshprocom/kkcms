@@ -8,4 +8,5 @@ context.instance_eval do
   column(:sales_volume)
   column(:published)
   column(:viewable)
+  actions
 end

@@ -25,7 +25,6 @@
         returnable: "是否支持退货"
         recommended: "是否推荐"
         description: "商品描述"
-        first_discounts: "首次可一元购"
       shop/variant:
         original_price: "商品价格"
         price: "实付价格"
