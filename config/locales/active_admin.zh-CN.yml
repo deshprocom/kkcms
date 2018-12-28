@@ -131,6 +131,9 @@
   wheel_count:
     'total': '总计'
     'daily': '每日'
+  product:
+    'entity': '实物产品'
+    'virtual': '虚拟产品'
   time:
     formats:
       long: "%Y-%m-%d %H:%M:%S"

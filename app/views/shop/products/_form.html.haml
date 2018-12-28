@@ -13,10 +13,11 @@
       - @product.errors[:category].each do |err|
         %p.inline-errors=err
     = f.input :shipping, include_blank: false
+    = f.input :product_type, collection: AdminTrans::PRODUCT_TYPES, include_blank: false
     = f.input :title
     = f.input :intro
     = f.input :published
-    = f.input :recommended
+    = f.input :visible_discounts_list
     = f.input :returnable
     = f.semantic_fields_for :master do |form|
       = form.input :original_price
