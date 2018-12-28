@@ -9,8 +9,8 @@ module Shop
     filter :recommended
     filter :by_root_category_in, label: '主类别', as: :select, collection: Category.roots_collection
 
-    permit_params :title, :description, :product_type, :category_id, :recommended,
-                  :published, :returnable, :shipping_id, :intro,
+    permit_params :title, :description, :product_type, :category_id, :visible_discounts_list, :recommended,
+                  :published, :returnable, :shipping_id, :intro, :product_type, :merchant_id,
                   master_attributes: [:original_price, :price, :stock,
                                       :volume, :origin_point, :weight]
 
