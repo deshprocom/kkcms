@@ -3,6 +3,7 @@
 = semantic_form_for @product, url: url do |f|
   = f.semantic_errors *f.object.errors.keys
   = f.inputs do
+    = f.input :merchant
     %li#search_player_input
       %label 所属分类
       - category_parent = @product.category&.parent
